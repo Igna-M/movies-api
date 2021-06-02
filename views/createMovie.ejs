@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<head>
+  <%- include('./partials/head') %>
+</head>
+
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="width80center">
+      <%- include('./partials/header') %>
+    </div>
+    
+    <main>
+      <div>
+      <% if (message) { %>
+        <h2><%= message %></h2>
+      <% } else { %>  
+        <h2>Resgister film</h2>
+      <% } %>
+      <div>
+
+        <form action="/newMovie" method="POST" autocomplete="on">
+        <!-- <form action="/newMovie" method="POST" autocomplete="on" enctype="multipart/form-data"> -->
+          <div class="">
+            <label for="Title">Title:</label><br>
+            <input type="text" name="title" id="title" placeholder="Title" value="<%= locals.originalData ? originalData.concept : null %>">
+            <% if (locals.errores && errores.title) { %>
+                <div class="">
+                    <%= errores.title.msg %> 
+                </div>
+            <% } %>
+          </div>
+
+          <div class="">
+            <label for="Title">Score:</label><br>
+            <select name="score" id="score">
+              <% for (let i = 1; i < 6; i++) { %> 
+                <option value="<%= i %>" ><%= i %></option>
+              <% } %>            
+            </select>
+          </div>
+
+          <div class="">
+            <label for="firstCharacter">First Character:</label><br>
+            <input type="text" name="character1" id="character1" placeholder="First Character" value="<%= locals.originalData ? originalData.concept : null %>">
+            <% if (locals.errores && character1.title) { %>
+                <div class="">
+                    <%= errores.character1.msg %> 
+                </div>
+            <% } %>
+          </div>
+
+
+
+          <div class="hide">
+            <label for="character2">Second Character:</label><br>
+            <input type="text" name="character2" id="character2" placeholder="Second Character" value="<%= locals.originalData ? originalData.concept : null %>">
+            <% if (locals.errores && character2.title) { %>
+                <div class="">
+                    <%= errores.character2.msg %> 
+                </div>
+            <% } %>
+          </div>
+
+
+          <div class="hide">
+            <label for="character3">Third Character:</label><br>
+            <input type="text" name="character3" id="character3" placeholder="Second Character" value="<%= locals.originalData ? originalData.concept : null %>">
+            <% if (locals.errores && character3.title) { %>
+                <div class="">
+                    <%= errores.character3.msg %> 
+                </div>
+            <% } %>
+          </div>
+
+        
+          <div class="">
+            <label for="genre1">Genre</label><br>
+            <select name="genre1" id="genre1">
+              <% for (let i = 1; i < 6; i++) { %> 
+                <option value=<% i %> ><%= i %></option>
+              <% } %>
+                <option value='New'>Add new genre</option>
+            </select>
+          </div>
+
+          <div class="hide">
+            <label for="NewGenre1">Add new genre:</label><br>
+            <input type="text" name="NewGenre1" id="NewGenre1" placeholder="Add new genre" value="<%= locals.originalData ? originalData.concept : null %>">
+            <% if (locals.errores && errores.NewGenre1) { %>
+                <div class="">
+                    <%= errores.NewGenre1.msg %> 
+                </div>
+            <% } %>
+          </div>
+
+
+          <div class="hide">
+            <label for="genre2">Second Genre</label><br>
+            <select name="genre2" id="genre2">
+              <% for (let i = 1; i < 6; i++) { %> 
+                <option value=<% i %> ><%= i %></option>
+              <% } %>
+                <option value='New'>Add new genre</option>
+            </select>
+          </div>
+        
+          <div class="hide">
+            <label for="NewGenre2">Add new genre:</label><br>
+            <input type="text" name="NewGenre2" id="NewGenre2" placeholder="Add new genre" value="<%= locals.originalData ? originalData.concept : null %>">
+            <% if (locals.errores && errores.NewGenre2) { %>
+                <div class="">
+                    <%= errores.NewGenre2.msg %> 
+                </div>
+            <% } %>
+          </div>
+
+
+          <div class="hide">
+            <label for="genre3">Third Genre</label><br>
+            <select name="genre3" id="genre3">
+              <% for (let i = 1; i < 6; i++) { %> 
+                <option value=<% i %> ><%= i %></option>
+              <% } %>
+                <option value='New'>Add new genre</option>
+            </select>
+          </div>
+        
+          <div class="hide">
+            <label for="NewGenre3">Add new genre:</label><br>
+            <input type="text" name="NewGenre3" id="NewGenre3" placeholder="Add new genre" value="<%= locals.originalData ? originalData.concept : null %>">
+            <% if (locals.errores && errores.NewGenre3) { %>
+                <div class="">
+                    <%= errores.NewGenre3.msg %> 
+                </div>
+            <% } %>
+          </div>
+          
+
+
+
+        <div class="">
+          <label for="release">Release Date:</label><br>
+          <input type="date" name="release" id="release" value="<%= locals.originalData ? originalData.date : null %>">
+          <% if (locals.errores && errores.release) { %>
+              <div class="">
+                  <%= errores.release.msg %> 
+              </div>
+          <% } %>
+        </div>
+
+
+
+        <div class="">
+          <label>Movie Poster</label><br>
+          <input type="file" name="moviePoster" id="file">
+          <% if (locals.errores && errores.moviePoster) { %>
+              <div class="text-alert">
+                  <%= errores.moviePoster.msg %>
+              </div>
+          <% } else if (locals.errores){ %>
+              <div class="text-alert">
+                  Please, upload the poster again.
+              </div>
+          <% } %>
+      </div>
+
+      <br>
+
+        <div class="">
+          <input type="submit" value="Create movie">
+        </div>
+          
+        <br>
+        
+        </form>
+        
+      </div>
+      
+      
+      <div class="width80center">
+        <%- include('./partials/list-buttons') %>
+    </div>
+      <br>
+    </main>
+
+  </body>
+</html>

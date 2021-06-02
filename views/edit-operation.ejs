@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+  <%- include('./partials/head') %>
+</head>
+
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%- include('./partials/header') %>
+
+    <main>
+      <div>
+        <% if (message) { %>
+          <h2><%= message %></h2>
+        <% } else { %>  
+          <h2>Edita la operación:</h2>
+        <% } %>
+        <div>
+      <div>
+        <form action="/updateOperation" method="POST" autocomplete="on">
+            
+          <div class="">
+            <label for="concept">Concepto:</label>
+            <input type="text" name="concept" id="concept" value="<%= locals.originalData ? originalData.concept : operation.concept %>">
+            <% if (locals.errores && errores.concept) { %>
+                <div class="">
+                    <%= errores.concept.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="">
+          <label for="amount">Monto:</label>
+          <input type="number" name="amount" id="amount" step="0.01" placeholder="Ingresa un número" value="<%= locals.originalData ? originalData.amount : operation.amount %>">
+          <% if (locals.errores && errores.amount) { %>
+              <div class="">
+                  <%= errores.amount.msg %> 
+              </div>
+          <% } %>
+        </div>
+
+        <div class="">
+          <label for="date">Fecha:</label>
+          <input type="date" name="date" id="date" value="<%= locals.originalData ? originalData.date : operation.date %>">
+          <% if (locals.errores && errores.monto) { %>
+              <div class="">
+                  <%= errores.monto.msg %> 
+              </div>
+          <% } %>
+        </div>
+
+        <div class="">
+          <label for="kind">Tipo de operación: (no puede ser modificado)</label>
+          <select type="date" name="kind" id="kind">
+            <% if (operation.kind == "ingreso") { %>
+              <!-- <option value="egreso">Egreso</option> -->
+              <option selected value="ingreso">Ingreso</option>
+            <% } else { %>
+                <option selected value="egreso">Egreso</option>
+                <!-- <option value="ingreso">Ingreso</option> -->
+            <% } %>
+          </select>
+        </div>
+
+        <input type="hidden" name="id" value="<%= operation.id %>">
+
+        <div class="">
+          
+          <input type="submit" value="Editar">
+        </div>
+          
+        </form>
+
+        <form action="/delete" method="Post">
+          <button type="submit" class="" name="delete" value="<%= operation.id %>">Borrar</button>
+        </form>
+      </div>
+      <%- include('./partials/list-buttons') %>
+    </main>
+
+  </body>
+</html>

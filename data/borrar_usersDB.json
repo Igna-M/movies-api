@@ -1,0 +1,111 @@
+[
+  {
+    "id": 1,
+    "fname": "Holden",
+    "lname": "Caulfield",
+    "user": "HoldenCaulfield",
+    "email": "Holden@ferreteria.com",
+    "admin": true,
+    "permisos": "1",
+    "birth_date": "1964-10-23",
+    "password": "$2b$12$zAMUnUDpeYjo28QiR2IxSeR9V5LLCorFgfB.Qh9ql9lfWseixOCSu",
+    "avatar": "avatar_img-1618200897383.jpeg"
+  },
+  {
+    "fname": "Mario",
+    "lname": "Bros",
+    "user": "MarioBros",
+    "permisos": "2",
+    "admin": false,
+    "birth_date": "1995-03-15",
+    "id": 2,
+    "email": "mario@bros.com",
+    "password": "$2b$12$.uzT5fwsPuruYuIe/dnM5.hI9owsMfzw17e9a34eRDhyNc5nfQwyC",
+    "avatar": "avatar_img-1618201482423.png"
+  },
+  {
+    "fname": "Cosme",
+    "lname": "Fulanito",
+    "user": "CosmeFulanito",
+    "permisos": "6",
+    "admin": false,
+    "birth_date": "1990-03-25",
+    "id": 3,
+    "email": "cosme@ferreteria.com.ar",
+    "password": "$2b$12$.Xho9uMdP1bIHpWl4n23CulQL2/HZApGY/WxAVQ2vMW/WorDqVO4y",
+    "avatar": "avatar_img-1618284520714.jpeg"
+  },
+  {
+    "fname": "Han",
+    "lname": "Solo",
+    "user": "HanSolo25",
+    "email": "han@ferre.com.ar",
+    "permisos": "3",
+    "admin": false,
+    "birth_date": "2003-02-22",
+    "id": 4,
+    "password": "$2b$12$b5Bjeylkvssc5v.BNvlgI.aiiif/Tqh.vnBpqMG8IPu.yEJ4DXj7y",
+    "avatar": "avatar_img-1618257724147.jpeg"
+  },
+  {
+    "id": 5,
+    "fname": "Pelusa",
+    "lname": "Maradona",
+    "user": "pelusa86",
+    "email": "diego@ferre.com.ar",
+    "permisos": "3",
+    "admin": false,
+    "birth_date": "1960-10-30",
+    "password": "$2b$12$D0xIFpeQvSSagn.mjrRu0e8zn.0xEAwJiZIhTKnnwL3yMLTCPFaya",
+    "avatar": "avatar_img-1618257787930.jpeg"
+  },
+  {
+    "fname": "Taylor",
+    "lname": "Swift",
+    "user": "taylor2002",
+    "email": "taylor@ferre.com.ar",
+    "permisos": "5",
+    "admin": true,
+    "birth_date": "1999-05-20",
+    "id": 6,
+    "password": "$2b$12$xwETFJrYFoNmWTuGUnFLIeBmxMAcKZkiC3RNQtG9BkuxGsAVLSk5S",
+    "avatar": "avatar_img-1618451471574.jpeg"
+  },
+  {
+    "id": 7,
+    "fname": "Gabriela",
+    "lname": "Sabatini",
+    "user": "gabiSabatini",
+    "email": "gabi@ferre.com.ar",
+    "permisos": "3",
+    "admin": true,
+    "birth_date": "1972-09-22",
+    "password": "$2b$12$64OrVarxs/WtBB/ZL4gj9.XcI97G2xVic7b3sOohhFPCrTmTh6GH.",
+    "avatar": "avatar_img-1618451777916.jpeg"
+  },
+  {
+    "id": 8,
+    "fname": "George",
+    "lname": "Costanza",
+    "user": "TheOpposite",
+    "email": "george@ferres.com.ar",
+    "permisos": "4",
+    "admin": false,
+    "birth_date": "1968-09-17",
+    "password": "$2b$12$OjtF/shtMLNF/6UUzFJwx.oJvmehXjVH.NAzKt6oElWw2vPZLk33W",
+    "remember_user": "on",
+    "avatar": "avatar_img-1618951703996.jpeg"
+  },
+  {
+    "fname": "Fry",
+    "lname": "Futurama",
+    "user": "Fututama2000",
+    "permisos": "4",
+    "admin": false,
+    "birth_date": "1980-02-22",
+    "id": 9,
+    "email": "fry@ferreteria.com.ar",
+    "password": "$2b$12$xJfjAnyryxpKaSILbd5r7.lDkw8.bwbI6T3txmPvBaQLKg954NEpS",
+    "avatar": "avatar_img-1621444946900.gif"
+  }
+]

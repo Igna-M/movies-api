@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+  <%- include('./partials/head') %>
+</head>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <h2>Si está logueado muestra el logout</h2>
+    <h2>Si no está logueado muestra el loguin y el register</h2>
+
+    <%- include('./partials/header') %>
+
+    <main>
+      
+
+      <h1>La entrada debería ser un login.</h1>
+      <br>
+      <h2>Si está loogueado, que pase a la página con la autorización para usar la api.</h2>
+      <p>También deberías poder ver las opciones de listas</p>
+      <p>Y el botón para crear una película (CRUD)</p>
+      <% if (message) { %>
+        <h2><%= message %></h2>
+      <% } %>
+      <div>
+      
+        
+
+      </div>
+      <br>
+      <hr>
+      <h2>Me parece que no neecsitamos estos botones.</h2>
+      <%- include('./partials/list-buttons') %>
+
+    </main>
+  </body>
+</html>

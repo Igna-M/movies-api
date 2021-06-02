@@ -1,0 +1,321 @@
+body {
+  padding: 5px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient( 295deg, #381683, #380f55);
+  color: aliceblue;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* Forms */
+/*  */
+/*  */
+
+form{
+  padding: 10px;
+  margin: 20px auto 40px auto;
+  border-radius: 10px;
+  width: 80%;
+  margin-top: 10px;
+  background-image: linear-gradient( 30deg, #6642b4, #682a94);
+  box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.8);
+}
+
+
+input[type=text] {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  box-shadow: 0px 3px 5px 1px rgba(100, 100, 100, 0.5);
+}
+
+select {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  box-shadow: 0px 3px 5px 1px rgba(100, 100, 100, 0.5);
+}
+
+input[type=submit] {
+  width: 60%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.5s;
+  box-shadow: 0px 3px 5px 0px rgba(10, 10, 10, 0.4);
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+  box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.8);
+}
+
+input[type=date] {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  box-shadow: 0px 3px 5px 1px rgba(100, 100, 100, 0.5);
+}
+
+input[type=file] {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+select:hover,
+input[type=text]:hover,
+input[type=date]:hover,
+input[type=file]:hover{
+  transition: all 0.2s;
+  box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.8);
+}
+
+
+/* .hide {
+  display: none;
+} */
+
+
+
+.width80center{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+/*  */
+/*  */
+
+.operation-element{
+  border: 2px solid #dedede;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 5px;
+  padding: 2px;
+  margin: 15px auto 15px auto;
+  max-width: 90%;
+  color: black;
+}
+
+.operation-element:hover{
+  background-image: linear-gradient(135deg, #c0d8f8 0%, #a3bce6 100%);
+  box-shadow: 2px 5px 10px 1px rgba(255, 255, 255, 0.2);
+}
+
+
+.operation-card p{
+  margin-top: 1px; 
+  margin-bottom: 1px; 
+}
+
+
+
+.one-line{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 99%;
+  margin: auto;
+  /* background: white; */
+}
+
+.first-line{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  margin: auto;
+}
+
+.operation-title {
+  font-weight: bold;
+  text-align: left;
+  margin-left: 8px;
+  width: 55%;
+  padding: 2px;
+}
+
+
+.operation-amount{
+  margin-right: 8px;
+  text-align:right;
+  width: 45%;
+  /* background-color: springgreen; */
+  padding: 2px;
+}
+
+.second-line{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 40%;
+  margin: auto;
+  /* background: steelblue; */
+}
+
+.operation-date{
+  width: 50%;
+  margin-left: 25px;
+  text-align: left;
+}
+
+.operation-kind{
+  width: 50%;
+  margin-right: 15px;
+  text-align: right;
+}
+
+
+
+
+/* Buttons */
+/*  */
+/*  */
+
+.new-op-button{
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: white solid 1px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.1em;
+  padding: 5px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.new-op-button:hover{
+  box-shadow: 2px 4px 5px 1px rgba(255, 255, 255, 0.2);
+}
+
+.new-op-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.new-op-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.new-op-button:hover span {
+  padding-right: 25px;
+}
+
+.new-op-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+
+
+
+.operation-buttons{
+  width: 10%;
+}
+
+.operation-edit-bt{
+  background-image: radial-gradient( circle 935px at 3.1% 5.8%,  rgba(85, 233, 0, 0.918) 0%, rgba(94, 255, 0) 100.2% );
+  color: black;
+  border-radius: 4px;
+  /* border: 2px solid #4CAF50; */
+  width: 80%;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  font-size: 0.8em;
+  transition-duration: 0.4s;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.operation-edit-bt:hover {
+  background-image: radial-gradient( circle 935px at 3.1% 5.8%,  rgb(70, 200, 0) 0%, rgb(50, 136, 0) 100.2% );
+  color: white;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.operation-delete-bt{
+  background-image: linear-gradient( 111.2deg,  rgb(233, 19, 19) 1.7%, rgb(235, 22, 19) 98.7% );
+  color: white;
+  border-radius: 4px;
+  /* border: 2px solid red; */
+  width: 80%;
+  margin-top: 2px;
+  margin-bottom: 1px;
+  font-size: 0.8em;
+  transition-duration: 0.4s;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.operation-delete-bt:hover {
+  background-image: linear-gradient( 111.2deg,  rgba(255,5,5,1) 22.7%, rgb(250, 2, 2) 98.7% );
+  color: white;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+.footer-buttons{
+  margin: auto;
+  width: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* width: 300px; */
+}
+
+.footer-buttons button{
+  padding: 5px 20px;
+  background-color: #f4511e;
+  color: white;
+  margin: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  transition: all 0.5s;
+}
+
+
+.footer-buttons button:hover{
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
+  font-weight: bold;
+  border: solid white 2px;
+}
