@@ -4,10 +4,6 @@
 </head>
 
 <html>
-  <head>
-    <title></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
   <body>
     <div class="width80center">
       <%- include('./partials/header') %>
@@ -43,8 +39,8 @@
             </select>
           </div>
 
-          <div class="">
-            <label for="firstCharacter">First Character:</label><br>
+          <div class="" id="character1">
+            <label for="firstCharacter">Character #1:</label><br>
             <input type="text" name="character1" id="character1" placeholder="First Character" value="<%= locals.originalData ? originalData.concept : null %>">
             <% if (locals.errores && character1.title) { %>
                 <div class="">
@@ -55,8 +51,8 @@
 
 
 
-          <div class="hide">
-            <label for="character2">Second Character:</label><br>
+          <div class="hide" id="character2">
+            <label for="character2">Character #2:</label><br>
             <input type="text" name="character2" id="character2" placeholder="Second Character" value="<%= locals.originalData ? originalData.concept : null %>">
             <% if (locals.errores && character2.title) { %>
                 <div class="">
@@ -66,8 +62,8 @@
           </div>
 
 
-          <div class="hide">
-            <label for="character3">Third Character:</label><br>
+          <div class="hide" id="character3">
+            <label for="character3">Character #3:</label><br>
             <input type="text" name="character3" id="character3" placeholder="Second Character" value="<%= locals.originalData ? originalData.concept : null %>">
             <% if (locals.errores && character3.title) { %>
                 <div class="">
@@ -77,19 +73,19 @@
           </div>
 
         
-          <div class="">
-            <label for="genre1">Genre</label><br>
+          <div class="" id="divGenre1">
+            <label for="genre1">Genre #1</label><br>
             <select name="genre1" id="genre1">
               <% for (let i = 1; i < 6; i++) { %> 
-                <option value=<% i %> ><%= i %></option>
+                <option value="<%= i %>" ><%= i %></option>
               <% } %>
                 <option value='New'>Add new genre</option>
             </select>
           </div>
 
-          <div class="hide">
+          <div class="hide" id="newGenre1">
             <label for="NewGenre1">Add new genre:</label><br>
-            <input type="text" name="NewGenre1" id="NewGenre1" placeholder="Add new genre" value="<%= locals.originalData ? originalData.concept : null %>">
+            <input type="text" name="NewGenre1" id="NewGenre1" placeholder="Type new genre" value="<%= locals.originalData ? originalData.concept : null %>">
             <% if (locals.errores && errores.NewGenre1) { %>
                 <div class="">
                     <%= errores.NewGenre1.msg %> 
@@ -98,19 +94,19 @@
           </div>
 
 
-          <div class="hide">
-            <label for="genre2">Second Genre</label><br>
+          <div class="hide" id="divGenre2">
+            <label for="genre2">Genre #2</label><br>
             <select name="genre2" id="genre2">
               <% for (let i = 1; i < 6; i++) { %> 
-                <option value=<% i %> ><%= i %></option>
+                <option value="<%= i %>" ><%= i %></option>
               <% } %>
                 <option value='New'>Add new genre</option>
             </select>
           </div>
         
-          <div class="hide">
+          <div class="hide" id="newGenre2">
             <label for="NewGenre2">Add new genre:</label><br>
-            <input type="text" name="NewGenre2" id="NewGenre2" placeholder="Add new genre" value="<%= locals.originalData ? originalData.concept : null %>">
+            <input type="text" name="NewGenre2" id="NewGenre2" placeholder="Type new genre" value="<%= locals.originalData ? originalData.concept : null %>">
             <% if (locals.errores && errores.NewGenre2) { %>
                 <div class="">
                     <%= errores.NewGenre2.msg %> 
@@ -119,19 +115,19 @@
           </div>
 
 
-          <div class="hide">
-            <label for="genre3">Third Genre</label><br>
+          <div class="hide" id="divGenre3">
+            <label for="genre3">Genre #3</label><br>
             <select name="genre3" id="genre3">
               <% for (let i = 1; i < 6; i++) { %> 
-                <option value=<% i %> ><%= i %></option>
+                <option value="<%= i %>"><%= i %></option>
               <% } %>
                 <option value='New'>Add new genre</option>
             </select>
           </div>
         
-          <div class="hide">
+          <div class="hide" id="newGenre3">
             <label for="NewGenre3">Add new genre:</label><br>
-            <input type="text" name="NewGenre3" id="NewGenre3" placeholder="Add new genre" value="<%= locals.originalData ? originalData.concept : null %>">
+            <input type="text" name="NewGenre3" id="NewGenre3" placeholder="Type new genre" value="<%= locals.originalData ? originalData.concept : null %>">
             <% if (locals.errores && errores.NewGenre3) { %>
                 <div class="">
                     <%= errores.NewGenre3.msg %> 
@@ -186,6 +182,6 @@
     </div>
       <br>
     </main>
-
+    <script src="/javascripts/createMovie.js"></script>
   </body>
 </html>

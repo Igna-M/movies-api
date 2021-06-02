@@ -1,25 +1,27 @@
+const fs = require('fs');
+const path = require('path');
+const { validationResult } = require('express-validator');
+
+// const productsDataDBPath = path.resolve(__dirname, '../data/productsDB.json');
+// const productsInDB = () => JSON.parse(fs.readFileSync(productsDataDBPath, 'utf-8'));
+// const categoriesDataDBPath = path.resolve(__dirname, '../data/categories.json');
+// const categories = JSON.parse(fs.readFileSync(categoriesDataDBPath, 'utf-8'));
 // const fetch = require("node-fetch");
 
 const moviesController = {
     createMovie: function(req, res) {
-
         let message = 'Register a movie'
-
         let view = {
             message: message
         }
-
         return res.render('createMovie', view);
     },
 
 
-
     newMovie: function(req, res) {
-        
-        console.log(req.body);
-        
-        // const errores = validationResult(req);
-        // console.log(errores);      
+                
+        const errores = validationResult(req);
+        console.log(errores);
 
         // if (!errores.isEmpty()) {
         //     if (req.file){
