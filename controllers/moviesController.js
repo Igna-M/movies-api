@@ -9,6 +9,8 @@ const { validationResult } = require('express-validator');
 // const fetch = require("node-fetch");
 
 const moviesController = {
+
+    // Show Form
     createMovie: function(req, res) {
         let message = 'Register a movie'
         let view = {
@@ -18,25 +20,31 @@ const moviesController = {
     },
 
 
+    // Process Form (POST)
     newMovie: function(req, res) {
                 
-        const errores = validationResult(req);
-        console.log(errores);
+        const errors = validationResult(req);
+        console.log(errors);
+        
+        // console.log(req.body);
 
-        // if (!errores.isEmpty()) {
-        //     if (req.file){
-        //         // console.log("Entramos al if de la imagen");
-        //         let filePath = path.resolve(__dirname,'../public/images/uploads/products/' + req.file.filename);
-        //         fs.unlinkSync(filePath);
-        //     }
 
-        //     let aLaVista = {
-        //         categories: categories,
-        //         errores: errores.mapped(),
-        //         originalData: req.body
-        //     }
-        //     return res.render('products/create', aLaVista);
-        // }
+        if (!errors.isEmpty()) {
+            if (req.file){
+                console.log("Entramos al if de la imagen");
+                let filePath = path.resolve(__dirname,'../public/images/movies' + req.file.filename);
+                fs.unlinkSync(filePath);
+            }
+
+            let message = 'Sorry, something went wrong. Try again.'
+
+            let view = {
+                message: message,
+                errors: errors.mapped(),
+                originalData: req.body
+            }
+            return res.render('createMovie', view);
+        }
         
         // let dataInDB = productsInDB()
         // let lastElement = dataInDB[dataInDB.length -1];

@@ -22,7 +22,7 @@ form{
   padding: 10px;
   margin: 20px auto 40px auto;
   border-radius: 10px;
-  width: 80%;
+  width: 85%;
   margin-top: 10px;
   background-image: linear-gradient( 30deg, #6642b4, #682a94);
   box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.8);
@@ -108,11 +108,53 @@ input[type=file]:hover{
 }
 
 
+.temp-flash {
+  animation: yellowfade 4s;
+}
+
+@keyframes yellowfade {
+  from { box-shadow: 2px 5px 10px 1px rgba(255, 255, 100, 1); }
+  to { box-shadow: 2px 5px 10px 1px rgba(255, 255, 0, 0); }
+}
+
+
+.temp-border {
+  animation: border-flash 5s;
+}
+
+@keyframes border-flash {
+  from { border: yellow solid 4px; }
+  to { border: yellow solid 1px; }
+}
 
 .width80center{
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+
+
+.validator-error{
+  color: #a3bce6;
+}
+
+
+.character-container-style{
+  margin: 8px auto 8px auto;
+  border: solid 2px #61586480;
+  background-image: linear-gradient( 160deg, #6642b4, #682a94);
+  width: 95%;
+  padding: 5px;
+  box-shadow: 2px 5px 10px 1px rgba(50, 50, 50, 0.8);
+}
+
+.genre-container-style{
+  margin: 8px auto 8px auto;
+  border: solid 2px #61586480;
+  background-image: linear-gradient( 120deg, #6642b4, #682a94);
+  width: 95%;
+  padding: 5px;
+  box-shadow: 2px 5px 10px 1px rgba(50, 50, 50, 0.8);
 }
 
 /* Buttons */

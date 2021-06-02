@@ -22,146 +22,272 @@
         <!-- <form action="/newMovie" method="POST" autocomplete="on" enctype="multipart/form-data"> -->
           <div class="">
             <label for="Title">Title:</label><br>
-            <input type="text" name="title" id="title" placeholder="Title" value="<%= locals.originalData ? originalData.concept : null %>">
-            <% if (locals.errores && errores.title) { %>
-                <div class="">
-                    <%= errores.title.msg %> 
-                </div>
-            <% } %>
+            <% if (locals.errors && errors.title) { %>
+              <div class="validator-error">
+                  <%= errors.title.msg %> 
+                  <br>
+              </div>
+          <% } %>
+            <input type="text" name="title" id="title" placeholder="Title" value="<%= locals.originalData ? originalData.title : null %>">
           </div>
+
 
           <div class="">
-            <label for="Title">Score:</label><br>
-            <select name="score" id="score">
+            <label for="Score">Score:</label><br>
+            <% if (locals.originalData && originalData.score) { %> 
+              <select name="score" id="score">
               <% for (let i = 1; i < 6; i++) { %> 
-                <option value="<%= i %>" ><%= i %></option>
-              <% } %>            
-            </select>
-          </div>
-
-          <div class="" id="character1">
-            <label for="firstCharacter">Character #1:</label><br>
-            <input type="text" name="character1" id="character1" placeholder="First Character" value="<%= locals.originalData ? originalData.concept : null %>">
-            <% if (locals.errores && character1.title) { %>
-                <div class="">
-                    <%= errores.character1.msg %> 
-                </div>
-            <% } %>
-          </div>
-
-
-
-          <div class="hide" id="character2">
-            <label for="character2">Character #2:</label><br>
-            <input type="text" name="character2" id="character2" placeholder="Second Character" value="<%= locals.originalData ? originalData.concept : null %>">
-            <% if (locals.errores && character2.title) { %>
-                <div class="">
-                    <%= errores.character2.msg %> 
-                </div>
-            <% } %>
-          </div>
-
-
-          <div class="hide" id="character3">
-            <label for="character3">Character #3:</label><br>
-            <input type="text" name="character3" id="character3" placeholder="Second Character" value="<%= locals.originalData ? originalData.concept : null %>">
-            <% if (locals.errores && character3.title) { %>
-                <div class="">
-                    <%= errores.character3.msg %> 
-                </div>
-            <% } %>
-          </div>
-
-        
-          <div class="" id="divGenre1">
-            <label for="genre1">Genre #1</label><br>
-            <select name="genre1" id="genre1">
-              <% for (let i = 1; i < 6; i++) { %> 
-                <option value="<%= i %>" ><%= i %></option>
+                <% if (originalData.score == i) { %> 
+                  <option value="<%= i %>" selected><%= i %></option>
+                <% } else { %>
+                  <option value="<%= i %>"><%= i %></option>
+                <% } %>
               <% } %>
-                <option value='New'>Add new genre</option>
-            </select>
-          </div>
-
-          <div class="hide" id="newGenre1">
-            <label for="NewGenre1">Add new genre:</label><br>
-            <input type="text" name="NewGenre1" id="NewGenre1" placeholder="Type new genre" value="<%= locals.originalData ? originalData.concept : null %>">
-            <% if (locals.errores && errores.NewGenre1) { %>
-                <div class="">
-                    <%= errores.NewGenre1.msg %> 
-                </div>
+              </select>
+            <% } else { %>
+              <select name="score" id="score">
+                <% for (let i = 1; i < 6; i++) { %> 
+                  <option value="<%= i %>" ><%= i %></option>
+                <% } %>
+              </select>
             <% } %>
           </div>
 
 
-          <div class="hide" id="divGenre2">
-            <label for="genre2">Genre #2</label><br>
-            <select name="genre2" id="genre2">
-              <% for (let i = 1; i < 6; i++) { %> 
-                <option value="<%= i %>" ><%= i %></option>
+          <!--  -->
+          <div id="character-container" class="character-container-style">
+            <div class="" id="character1">
+              <label for="firstCharacter">Character #1:</label><br>
+              <% if (locals.errors && errors.character1) { %>
+                <div class="validator-error">
+                    <%= errors.character1.msg %>
+                    <br>
+                </div>
               <% } %>
-                <option value='New'>Add new genre</option>
-            </select>
-          </div>
-        
-          <div class="hide" id="newGenre2">
-            <label for="NewGenre2">Add new genre:</label><br>
-            <input type="text" name="NewGenre2" id="NewGenre2" placeholder="Type new genre" value="<%= locals.originalData ? originalData.concept : null %>">
-            <% if (locals.errores && errores.NewGenre2) { %>
-                <div class="">
-                    <%= errores.NewGenre2.msg %> 
+              <input type="text" name="character1" id="character1" placeholder="First Character" value="<%= locals.originalData ? originalData.character1 : null %>">
+            </div>
+
+
+
+            <% if (locals.errors && originalData.character2) { %>
+            <div class="" id="character2">
+              <label for="character2">Character #2:</label><br>
+              <% if (errors.character2) { %>
+                <div class="validator-error">
+                    <%= errors.character2.msg %>
+                    <br>
                 </div>
-            <% } %>
-          </div>
-
-
-          <div class="hide" id="divGenre3">
-            <label for="genre3">Genre #3</label><br>
-            <select name="genre3" id="genre3">
-              <% for (let i = 1; i < 6; i++) { %> 
-                <option value="<%= i %>"><%= i %></option>
               <% } %>
-                <option value='New'>Add new genre</option>
-            </select>
-          </div>
-        
-          <div class="hide" id="newGenre3">
-            <label for="NewGenre3">Add new genre:</label><br>
-            <input type="text" name="NewGenre3" id="NewGenre3" placeholder="Type new genre" value="<%= locals.originalData ? originalData.concept : null %>">
-            <% if (locals.errores && errores.NewGenre3) { %>
-                <div class="">
-                    <%= errores.NewGenre3.msg %> 
-                </div>
+              <input type="text" name="character2" id="character2" placeholder="Second Character" value="<%= locals.originalData ? originalData.character2 : null %>">
+            </div>
+            <% } else { %>
+            <div class="hide" id="character2">
+              <label for="character2">Character #2:</label><br>
+              <input type="text" name="character2" id="character2" placeholder="Second Character" value="<%= locals.originalData ? originalData.character2 : null %>">
+            </div>
+            <% } %>
+
+
+            <% if (locals.errors && originalData.character3) { %>
+              <div class="" id="character3">
+                <label for="character3">Character #3:</label><br>
+                <% if (errors.character3) { %>
+                  <div class="validator-error">
+                      <%= errors.character3.msg %>
+                      <br>
+                  </div>
+                <% } %>
+                <input type="text" name="character3" id="character3" placeholder="Third Character" value="<%= locals.originalData ? originalData.character3 : null %>">
+              </div>
+              <% } else { %>
+              <div class="hide" id="character3">
+                <label for="character3">Character #3:</label><br>
+                <input type="text" name="character3" id="character3" placeholder="Third Character" value="<%= locals.originalData ? originalData.character3 : null %>">            </div>
             <% } %>
           </div>
+
+
+
+          <!--  -->
+          <div id="genre1-container" class="genre-container-style">
+            <div class="" id="divGenre1">
+              <label for="genre1">Genre #1</label><br>
+              <% if (locals.originalData && originalData.genre1) { %> 
+                <select name="genre1" id="genre1">
+                  <% for (let i = 1; i < 6; i++) { %> 
+                    <% if (originalData.genre1 == i) { %> 
+                      <option value="<%= i %>" selected><%= i %></option>
+                    <% } else { %>
+                      <option value="<%= i %>"><%= i %></option>
+                    <% } %>
+                  <% } %>
+                  <% if (originalData.genre1 == 'new') { %> 
+                    <option selected value='new'>Add new genre</option>
+                  <% } else { %>
+                    <option value='new'>Add new genre</option>
+                  <% } %>
+                </select>
+              <% } else { %>
+                <select name="genre1" id="genre1">
+                  <% for (let i = 1; i < 6; i++) { %> 
+                    <option value="<%= i %>" ><%= i %></option>
+                  <% } %>
+                    <option value='new'>Add new genre</option>
+                </select>
+              <% } %>
+            </div>
+
+
+
+            <% if (locals.errors && originalData.genre1 == "new") { %>
+              <div class="" id="newGenre1">
+                <label for="NewGenre1">Add new genre:</label><br>
+                <% if (errors.NewGenre1) { %>
+                <div class="validator-error">
+                    <%= errors.NewGenre1.msg %>
+                    <br>
+                </div>
+                <% } %>
+                <input type="text" name="NewGenre1" id="NewGenre1" value="<%= locals.originalData ? originalData.NewGenre1 : null %>">
+              </div>
+            <% } else { %>
+              <div class="hide" id="newGenre1">
+                <label for="NewGenre1">Add new genre:</label><br>
+                <input type="text" name="NewGenre1" id="NewGenre1" placeholder="Type new genre" value="<%= locals.originalData ? originalData.newGenre1 : null %>">
+              </div>
+            <% } %>
+          </div>
+
+
+          <!--  -->
+          <div id="genre2-container" class="hide">
+            <div class="hide" id="divGenre2">
+              <label for="genre2">Genre #2</label><br>
+              <% if (locals.originalData && originalData.genre2) { %> 
+                <select name="genre2" id="genre2">
+                  <% for (let i = 1; i < 6; i++) { %> 
+                    <% if (originalData.genre2 == i) { %> 
+                      <option value="<%= i %>" selected><%= i %></option>
+                    <% } else { %>
+                      <option value="<%= i %>"><%= i %></option>
+                    <% } %>
+                  <% } %>
+                  <% if (originalData.genre2 == 'new') { %> 
+                    <option selected value='new'>Add new genre</option>
+                  <% } else { %>
+                    <option value='new'>Add new genre</option>
+                  <% } %>
+                </select>
+              <% } else { %>
+                <select name="genre2" id="genre2">
+                  <% for (let i = 1; i < 6; i++) { %> 
+                    <option value="<%= i %>" ><%= i %></option>
+                  <% } %>
+                    <option value='new'>Add new genre</option>
+                </select>
+              <% } %>
+            </div>
+
+
+
+            <% if (locals.errors && originalData.genre2 == "new") { %>
+              <div class="" id="newGenre2">
+                <label for="NewGenre2">Add new genre:</label><br>
+                <% if (errors.NewGenre2) { %>
+                <div class="validator-error">
+                    <%= errors.NewGenre2.msg %>
+                    <br>
+                </div>
+                <% } %>
+                <input type="text" name="NewGenre2" id="NewGenre2" value="<%= locals.originalData ? originalData.NewGenre2 : null %>">
+              </div>
+            <% } else { %>
+              <div class="hide" id="newGenre2">
+                <label for="NewGenre2">Add new genre:</label><br>
+                <input type="text" name="NewGenre2" id="NewGenre2" placeholder="Type new genre" value="<%= locals.originalData ? originalData.newGenre2 : null %>">
+              </div>
+            <% } %>
+          </div>
+
+
+
+          <!--  -->
+          <div id="genre3-container" class="hide">
+            <div class="hide" id="divGenre3">
+              <label for="genre3">Genre #3</label><br>
+              <% if (locals.originalData && originalData.genre3) { %> 
+                <select name="genre3" id="genre3">
+                  <% for (let i = 1; i < 6; i++) { %> 
+                    <% if (originalData.genre3 == i) { %> 
+                      <option value="<%= i %>" selected><%= i %></option>
+                    <% } else { %>
+                      <option value="<%= i %>"><%= i %></option>
+                    <% } %>
+                  <% } %>
+                  <% if (originalData.genre3 == 'new') { %> 
+                    <option selected value='new'>Add new genre</option>
+                  <% } else { %>
+                    <option value='new'>Add new genre</option>
+                  <% } %>
+                </select>
+              <% } else { %>
+                <select name="genre3" id="genre3">
+                  <% for (let i = 1; i < 6; i++) { %> 
+                    <option value="<%= i %>" ><%= i %></option>
+                  <% } %>
+                    <option value='new'>Add new genre</option>
+                </select>
+              <% } %>
+            </div>
           
+
+            <% if (locals.errors && originalData.genre3 == "new") { %>
+              <div class="" id="newGenre3">
+                <label for="NewGenre3">Add new genre:</label><br>
+                <% if (errors.NewGenre3) { %>
+                <div class="validator-error">
+                    <%= errors.NewGenre3.msg %>
+                    <br>
+                </div>
+                <% } %>
+                <input type="text" name="NewGenre3" id="NewGenre2" value="<%= locals.originalData ? originalData.NewGenre3 : null %>">
+              </div>
+            <% } else { %>
+              <div class="hide" id="newGenre3">
+                <label for="NewGenre3">Add new genre:</label><br>
+                <input type="text" name="NewGenre3" id="NewGenre3" placeholder="Type new genre" value="<%= locals.originalData ? originalData.newGenre3 : null %>">
+              </div>
+            <% } %>
+          </div>
+
 
 
 
         <div class="">
-          <label for="release">Release Date:</label><br>
-          <input type="date" name="release" id="release" value="<%= locals.originalData ? originalData.date : null %>">
-          <% if (locals.errores && errores.release) { %>
-              <div class="">
-                  <%= errores.release.msg %> 
-              </div>
+          <% if (locals.errors && errors.release) { %>
+            <div class="validator-error">
+                <%= errors.release.msg %> 
+            </div>
           <% } %>
+          <label for="release">Release Date:</label><br>
+          <input type="date" name="release" id="release" value="<%= locals.originalData ? originalData.release : null %>">
         </div>
 
 
 
         <div class="">
           <label>Movie Poster</label><br>
+          <% if (locals.errors && errors.moviePoster) { %>
+            <div class="validator-error">
+                <%= errors.moviePoster.msg %>
+            </div>
+        <% } else if (locals.errors){ %>
+            <div class="validator-error">
+                Please, upload the poster again.
+            </div>
+        <% } %>
           <input type="file" name="moviePoster" id="file">
-          <% if (locals.errores && errores.moviePoster) { %>
-              <div class="text-alert">
-                  <%= errores.moviePoster.msg %>
-              </div>
-          <% } else if (locals.errores){ %>
-              <div class="text-alert">
-                  Please, upload the poster again.
-              </div>
-          <% } %>
+          
       </div>
 
       <br>
