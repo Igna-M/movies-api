@@ -12,7 +12,7 @@ const moviesController = require('../controllers/moviesController');
 
 router.get('/', mainController.index);
 router.get('/createMovie', moviesController.createMovie);
-router.post('/newMovie', uploadFile.single('movie_poster'), createMovieValidation, moviesController.newMovie);
+router.post('/newMovie', uploadFile.single('moviePoster'), createMovieValidation, moviesController.newMovie);
 
 
 

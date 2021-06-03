@@ -1,0 +1,11 @@
+[
+    {
+        "id":0,
+        "title": "Hercules",
+        "score": "4",
+        "characters": ["1","",""],
+        "genres": ["1","0","0"],
+        "release": "1997-01-01",
+        "moviePoster": "moviePoster-1622674659431.jpeg"
+        }
+]

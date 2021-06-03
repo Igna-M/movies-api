@@ -18,8 +18,8 @@
       <% } %>
       <div>
 
-        <form action="/newMovie" method="POST" autocomplete="on">
-        <!-- <form action="/newMovie" method="POST" autocomplete="on" enctype="multipart/form-data"> -->
+        <!-- <form action="/newMovie" method="POST" autocomplete="on"> -->
+        <form action="/newMovie" method="POST" autocomplete="on" enctype="multipart/form-data" id="form">
           <div class="">
             <label for="Title">Title:</label><br>
             <% if (locals.errors && errors.title) { %>
@@ -114,11 +114,11 @@
               <label for="genre1">Genre #1</label><br>
               <% if (locals.originalData && originalData.genre1) { %> 
                 <select name="genre1" id="genre1">
-                  <% for (let i = 1; i < 6; i++) { %> 
-                    <% if (originalData.genre1 == i) { %> 
-                      <option value="<%= i %>" selected><%= i %></option>
+                  <% for (let i = 0; i < genres.length; i++) { %> 
+                    <% if (originalData.genre1 == genres[i].id) { %> 
+                      <option value="<%= genres[i].id %>" selected><%= genres[i].name %></option>
                     <% } else { %>
-                      <option value="<%= i %>"><%= i %></option>
+                      <option value="<%= genres[i].id %>" ><%= genres[i].name %></option>
                     <% } %>
                   <% } %>
                   <% if (originalData.genre1 == 'new') { %> 
@@ -129,8 +129,8 @@
                 </select>
               <% } else { %>
                 <select name="genre1" id="genre1">
-                  <% for (let i = 1; i < 6; i++) { %> 
-                    <option value="<%= i %>" ><%= i %></option>
+                  <% for (let i = 0; i < genres.length; i++) { %> 
+                    <option value="<%= genres[i].id %>" ><%= genres[i].name %></option>
                   <% } %>
                     <option value='new'>Add new genre</option>
                 </select>

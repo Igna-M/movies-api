@@ -1,0 +1,26 @@
+[
+    {
+        "id":0,
+        "name": "None"
+    },
+    {
+        "id":1,
+        "name": "Minnie Mouse"
+    },
+    {
+        "id":2,
+        "name": "Aladdin"
+    },
+    {
+        "id":3,
+        "name": "BB-8"
+    },
+    {
+        "id":4,
+        "name": "Hercules"
+    },
+    {
+        "id":5,
+        "name": "Mickey Mouse"
+    }
+]

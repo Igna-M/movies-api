@@ -2,10 +2,19 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 
-// const productsDataDBPath = path.resolve(__dirname, '../data/productsDB.json');
-// const productsInDB = () => JSON.parse(fs.readFileSync(productsDataDBPath, 'utf-8'));
-// const categoriesDataDBPath = path.resolve(__dirname, '../data/categories.json');
-// const categories = JSON.parse(fs.readFileSync(categoriesDataDBPath, 'utf-8'));
+// const dbMoviesPath = path.resolve(__dirname, '../data/movies.json');
+// const moviesInDB = () => JSON.parse(fs.readFileSync(dbMoviesPath, 'utf-8'));
+// const dbCharactersPath = path.resolve(__dirname, '../data/characters.json');
+// const charactersInDB = () => JSON.parse(fs.readFileSync(dbCharactersPath, 'utf-8'));
+// const dbGenresPath = path.resolve(__dirname, '../data/genres.json');
+// const genresInDB = () => JSON.parse(fs.readFileSync(dbGenresPath, 'utf-8'));
+
+
+
+const Movies = require('../models/Movie');
+const Characters = require('../models/Character');
+const Genres = require('../models/Genre');
+
 // const fetch = require("node-fetch");
 
 const moviesController = {
@@ -13,57 +22,76 @@ const moviesController = {
     // Show Form
     createMovie: function(req, res) {
         let message = 'Register a movie'
+
+        // let movies = Movies.findAll()
+        let characters = Characters.findAll()
+        let genres = Genres.findAll()
+        
+
+
         let view = {
-            message: message
+            // movies: movies,
+            message: message,
+            genres: genres,
+            characters: characters
         }
+
+        console.log(view);
+
         return res.render('createMovie', view);
     },
 
 
     // Process Form (POST)
     newMovie: function(req, res) {
-                
         const errors = validationResult(req);
-        console.log(errors);
         
-        // console.log(req.body);
-
-
         if (!errors.isEmpty()) {
             if (req.file){
-                console.log("Entramos al if de la imagen");
-                let filePath = path.resolve(__dirname,'../public/images/movies' + req.file.filename);
+                let filePath = path.resolve(__dirname,'../public/images/movies/' + req.file.filename);
                 fs.unlinkSync(filePath);
             }
 
-            let message = 'Sorry, something went wrong. Try again.'
+            let message = 'Sorry, something went wrong. Please, try again.'
+
+            
+            // let characters = Characters.findAll()
+            let genres = Genres.findAll()
 
             let view = {
                 message: message,
+                genres: genres,
                 errors: errors.mapped(),
                 originalData: req.body
             }
             return res.render('createMovie', view);
         }
         
-        // let dataInDB = productsInDB()
-        // let lastElement = dataInDB[dataInDB.length -1];
+        // let movies = Movies.findAll()
+        // let lastElement = movies[movies.length -1];
         // let lastID = lastElement.id;
         // let nextID = lastID + 1;
 
-        // let nuevoProducto = {
+
+
+        // let newMovie = {
         //     id: nextID,
-        //     ...req.body,
-        //     image: req.file.filename
+        //     title: req.body.title,
+        //     score: req.body.score,
+        //     characters: [],
+        //     genres: [],
+        //     release: '',            
+        //     moviePoster: req.file.filename
         // }
 
-        // dataInDB.push(nuevoProducto);
+        // movies.push(newMovie);
 
-        // let uploadProducts = JSON.stringify(dataInDB, null , 2);
-        // fs.writeFileSync(productsDataDBPath, uploadProducts)
+        // let uploadMovies = JSON.stringify(movies, null , 2);
+        // fs.writeFileSync(dbPath, uploadMovies)
 
         // return res.redirect('/products');
 
+        // return res.send(newMovie)
         return res.send(req.body)
     },
 
