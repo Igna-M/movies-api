@@ -1,66 +1,66 @@
 [
-    {
-        "id":0,
-        "name": "None"
-    },
-    {
-        "id":1,
-        "name": "Action"
-    },
-    {
-        "id":2,
-        "name": "Adventure"
-    },
-    {
-        "id":3,
-        "name": "Comedy"
-    },
-    {
-        "id":4,
-        "name": "Crime and mystery"
-    },
-    {
-        "id":5,
-        "name": "Fantasy"
-    },
-    {
-        "id":6,
-        "name": "Historical"
-    },
-    {
-        "id":7,
-        "name": "Horror"
-    },
-    {
-        "id":8,
-        "name": "Romance"
-    },
-    {
-        "id":9,
-        "name": "Satire"
-    },
-    {
-        "id":10,
-        "name": "Science fiction"
-    },
-    {
-        "id":11,
-        "name": "Speculative"
-    },
-    {
-        "id":12,
-        "name": "Thriller"
-    },
-    {
-        "id":13,
-        "name": "Western"
-    },
-    {
-        "id":14,
-        "name": "Sagas"
-    },
-    {
-        "id":15,
-        "name": "Other"
-    }
+  {
+    "id": 0,
+    "name": "None"
+  },
+  {
+    "id": 1,
+    "name": "Action"
+  },
+  {
+    "id": 2,
+    "name": "Adventure"
+  },
+  {
+    "id": 3,
+    "name": "Comedy"
+  },
+  {
+    "id": 4,
+    "name": "Crime and mystery"
+  },
+  {
+    "id": 5,
+    "name": "Fantasy"
+  },
+  {
+    "id": 6,
+    "name": "Historical"
+  },
+  {
+    "id": 7,
+    "name": "Horror"
+  },
+  {
+    "id": 8,
+    "name": "Romance"
+  },
+  {
+    "id": 9,
+    "name": "Satire"
+  },
+  {
+    "id": 10,
+    "name": "Science fiction"
+  },
+  {
+    "id": 11,
+    "name": "Speculative"
+  },
+  {
+    "id": 12,
+    "name": "Thriller"
+  },
+  {
+    "id": 13,
+    "name": "Western"
+  },
+  {
+    "id": 14,
+    "name": "Sagas"
+  },
+  {
+    "id": 15,
+    "name": "Other"
+  }
 ]

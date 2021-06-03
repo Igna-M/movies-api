@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 
-// const dbMoviesPath = path.resolve(__dirname, '../data/movies.json');
+const dbMoviesPath = path.resolve(__dirname, '../data/movies.json');
 // const moviesInDB = () => JSON.parse(fs.readFileSync(dbMoviesPath, 'utf-8'));
 // const dbCharactersPath = path.resolve(__dirname, '../data/characters.json');
 // const charactersInDB = () => JSON.parse(fs.readFileSync(dbCharactersPath, 'utf-8'));
@@ -36,7 +36,7 @@ const moviesController = {
             characters: characters
         }
 
-        console.log(view);
+        // console.log(view);
 
         return res.render('createMovie', view);
     },
@@ -68,32 +68,54 @@ const moviesController = {
             return res.render('createMovie', view);
         }
         
-        // let movies = Movies.findAll()
-        // let lastElement = movies[movies.length -1];
-        // let lastID = lastElement.id;
-        // let nextID = lastID + 1;
+        let movies = Movies.findAll()
+        let lastElement = movies[movies.length -1];
+        let lastID = lastElement.id;
+        let nextID = lastID + 1;
 
 
+        let charactersLis = [req.body.character1, req.body.character2, req.body.character3];
+        let selectedCharacters = []
+        for (let i = 0; i < charactersLis.length; i++){
+            if (charactersLis[i] != '0' && charactersLis[i] != 'new'){
+                selectedCharacters.push(Number(charactersLis[i]));
+            }
+        }
+        
+        
+        let optionsGenres = [req.body.genre1, req.body.genre2, req.body.genre3];
+        let newGenres = [req.body.NewGenre1, req.body.NewGenre2, req.body.NewGenre3];
 
-        // let newMovie = {
-        //     id: nextID,
-        //     title: req.body.title,
-        //     score: req.body.score,
-        //     characters: [],
-        //     genres: [],
-        //     release: '',            
-        //     moviePoster: req.file.filename
-        // }
+        let selectedGenres = [];
+        for (let i = 0; i < optionsGenres.length; i++){
+            if (optionsGenres[i] != 'new' && optionsGenres[i] != '0'){
+                selectedGenres.push(Number(optionsGenres[i]));
+            } else if (optionsGenres[i] == 'new' && newGenres[i] != 'null'){
+                newGenreID = Genres.create(newGenres[i])
+                // console.log('Crear nuevo género'); // Acá va la función para revisar que el género no existe y agregarlo.
+                selectedGenres.push(newGenreID);// Tengo que recibir el nuevo ID del género para agregarlo.
+            } 
+        }
 
-        // movies.push(newMovie);
+        let newMovie = {
+            id: nextID,
+            title: req.body.title,
+            score: Number(req.body.score),
+            characters: selectedCharacters,
+            genres: selectedGenres,
+            release: req.body.release,            
+            moviePoster: req.file.filename
+        }
 
-        // let uploadMovies = JSON.stringify(movies, null , 2);
-        // fs.writeFileSync(dbPath, uploadMovies)
+        movies.push(newMovie);
 
-        // return res.redirect('/products');
+        let uploadMovies = JSON.stringify(movies, null , 2);
+        fs.writeFileSync(dbMoviesPath, uploadMovies)
+
+        return res.redirect('/');
 
         // return res.send(newMovie)
-        return res.send(req.body)
+        // return res.send(req.body)
     },
 
 

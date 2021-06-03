@@ -1,11 +1,178 @@
 [
-    {
-        "id":0,
-        "title": "Hercules",
-        "score": "4",
-        "characters": ["1","",""],
-        "genres": ["1","0","0"],
-        "release": "1997-01-01",
-        "moviePoster": "moviePoster-1622674659431.jpeg"
-        }
+  {
+    "id": 0,
+    "title": "Hercules",
+    "score": "4",
+    "characters": [
+      "1",
+      "",
+      ""
+    ],
+    "genres": [
+      "1",
+      "0",
+      "0"
+    ],
+    "release": "1997-01-01",
+    "moviePoster": "moviePoster-1622674659431.jpeg"
+  },
+  {
+    "id": 1,
+    "title": "Malevola",
+    "score": "2",
+    "characters": [
+      "1",
+      "0",
+      "0"
+    ],
+    "genres": [
+      "5",
+      "new",
+      "0"
+    ],
+    "newGenres": [
+      "",
+      null,
+      ""
+    ],
+    "release": "1999-12-22",
+    "moviePoster": "moviePoster-1622732718386.jpeg"
+  },
+  {
+    "id": 2,
+    "title": "Fantasia",
+    "score": "4",
+    "characters": [
+      "5",
+      "0",
+      "0"
+    ],
+    "genres": [
+      "10",
+      ""
+    ],
+    "newGenres": [
+      "",
+      null,
+      ""
+    ],
+    "release": "1956-12-22",
+    "moviePoster": "moviePoster-1622734150983.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Fantasia",
+    "score": "4",
+    "characters": [
+      "5",
+      "0",
+      "0"
+    ],
+    "genres": [
+      "10",
+      "Musical"
+    ],
+    "release": "1956-12-22",
+    "moviePoster": "moviePoster-1622734362402.jpeg"
+  },
+  {
+    "id": 4,
+    "title": "Fantasia",
+    "score": "5",
+    "characters": [
+      "1"
+    ],
+    "genres": [
+      "Musicales",
+      "Musical"
+    ],
+    "release": "1965-12-22",
+    "moviePoster": "moviePoster-1622734744031.jpeg"
+  },
+  {
+    "id": 5,
+    "title": "Fantasia II",
+    "score": "4",
+    "characters": [],
+    "genres": [
+      "Musicales",
+      "Drama"
+    ],
+    "release": "2021-12-22",
+    "moviePoster": "moviePoster-1622735314374.jpeg"
+  },
+  {
+    "id": 6,
+    "title": "Fantasia II",
+    "score": "4",
+    "characters": [],
+    "genres": [
+      "Musicales",
+      "Action"
+    ],
+    "release": "2021-12-22",
+    "moviePoster": "moviePoster-1622735489722.jpeg"
+  },
+  {
+    "id": 7,
+    "title": "Fantasia II",
+    "score": "4",
+    "characters": [],
+    "genres": [
+      "Musicales",
+      "Fantsay"
+    ],
+    "release": "2021-12-22",
+    "moviePoster": "moviePoster-1622735555620.jpeg"
+  },
+  {
+    "id": 8,
+    "title": "Fantasia II",
+    "score": "4",
+    "characters": [],
+    "genres": [
+      "Fantsay",
+      "Fantasy"
+    ],
+    "release": "2021-12-22",
+    "moviePoster": "moviePoster-1622735621331.jpeg"
+  },
+  {
+    "id": 9,
+    "title": "Fantasia II",
+    "score": "4",
+    "characters": [],
+    "genres": [
+      "Western",
+      "Detectives"
+    ],
+    "release": "2021-12-22",
+    "moviePoster": "moviePoster-1622736058062.jpeg"
+  },
+  {
+    "id": 10,
+    "title": "Fantasia II",
+    "score": "4",
+    "characters": [],
+    "genres": [
+      "9",
+      1,
+      17
+    ],
+    "release": "2021-12-22",
+    "moviePoster": "moviePoster-1622737508056.jpeg"
+  },
+  {
+    "id": 11,
+    "title": "Bambi",
+    "score": 2,
+    "characters": [],
+    "genres": [
+      7,
+      13,
+      18
+    ],
+    "release": "1979-11-11",
+    "moviePoster": "moviePoster-1622737761201.jpeg"
+  }
 ]

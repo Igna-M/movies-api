@@ -21,6 +21,33 @@ const Genre = {
 		let genreFound = allGenres.find(oneGenre => oneGenre[field] === text);
 		return genreFound;
 	},
+
+	create: function (genre) {
+		let allGenres = this.findAll();
+	
+		let searchGenre = this.findByField('name', genre) // First, we check if the genre already exists.
+		if (searchGenre == undefined) {
+			let lastElement = allGenres[allGenres.length -1];
+			let lastID = lastElement.id;
+			let nextID = lastID + 1;
+
+			let newGenre = {
+				id: nextID,
+				name: genre
+			}
+
+			allGenres.push(newGenre);
+			let uploadGenres = JSON.stringify(allGenres, null , 2);
+			fs.writeFileSync(dbGenresPath, uploadGenres)
+
+			return nextID
+		} else {
+
+			let genreID = searchGenre.id
+			
+			return genreID;
+		}	
+	}
 }
 
 module.exports = Genre;
