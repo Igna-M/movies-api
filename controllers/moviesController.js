@@ -55,12 +55,13 @@ const moviesController = {
             let message = 'Sorry, something went wrong. Please, try again.'
 
             
-            // let characters = Characters.findAll()
+            let characters = Characters.findAll()
             let genres = Genres.findAll()
 
             let view = {
                 message: message,
                 genres: genres,
+                characters: characters,
                 errors: errors.mapped(),
                 originalData: req.body
             }

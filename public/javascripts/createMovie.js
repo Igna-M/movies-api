@@ -1,13 +1,13 @@
 window.addEventListener("load", () => {
     
-    let character1 = document.querySelector("input#character1")
+    let character1 = document.querySelector("select#character1")
     let divChar2 = document.querySelector("div#character2")
 
 
-    let character2 = document.querySelector("input#character2")
+    let character2 = document.querySelector("select#character2")
     let divChar3 = document.querySelector("div#character3")
     
-    let character3 = document.querySelector("input#character3")
+    let character3 = document.querySelector("select#character3")
 
     character1.addEventListener("change", function(e){
         divChar2.classList.remove('hide');
