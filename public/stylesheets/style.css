@@ -28,7 +28,7 @@ form{
   box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.8);
 }
 
-
+textarea,
 input[type=text] {
   width: 90%;
   padding: 12px 20px;
@@ -95,6 +95,7 @@ input[type=file] {
 }
 
 select:hover,
+textarea:hover,
 input[type=text]:hover,
 input[type=date]:hover,
 input[type=file]:hover{
@@ -156,6 +157,11 @@ input[type=file]:hover{
   padding: 5px;
   box-shadow: 2px 5px 10px 1px rgba(50, 50, 50, 0.8);
 }
+
+
+/* input.double-height{
+  height: 80px;
+} */
 
 /* Buttons */
 /*  */

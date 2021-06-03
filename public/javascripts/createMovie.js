@@ -10,16 +10,24 @@ window.addEventListener("load", () => {
     let character3 = document.querySelector("select#character3")
 
     character1.addEventListener("change", function(e){
-        divChar2.classList.remove('hide');
-        character2.classList.add('temp-flash');
-        character2.classList.add('temp-border');
-        
+
+        let selectCharacter = e.target.value;
+        if (selectCharacter != "new"){
+            divChar2.classList.remove('hide');
+            character2.classList.add('temp-flash');
+            character2.classList.add('temp-border');
+        }        
     })
 
     character2.addEventListener("change", function(e){
-        divChar3.classList.remove('hide');
-        character3.classList.add('temp-flash');
-        character3.classList.add('temp-border');
+
+        let selectCharacter = e.target.value;
+        if (selectCharacter != "new"){
+
+            divChar3.classList.remove('hide');
+            character3.classList.add('temp-flash');
+            character3.classList.add('temp-border');
+        }
     })
 
     let selectGenre1 = document.querySelector("select#genre1")
@@ -82,4 +90,37 @@ window.addEventListener("load", () => {
         inputNewGenre3.classList.add('temp-border');
     }
     })
+
+
+
+    // New character button
+
+    let newCharacterButton = document.querySelector("div#new-character-button")
+
+    character1.addEventListener("change", function(e){
+        let selectCharacter = e.target.value;
+
+        if (selectCharacter == "new"){
+            newCharacterButton.classList.remove('hide');
+        }
+    })
+
+
+    character2.addEventListener("change", function(e){
+        let selectCharacter = e.target.value;
+
+        if (selectCharacter == "new"){
+            newCharacterButton.classList.remove('hide');
+        }
+    })
+
+
+    character3.addEventListener("change", function(e){
+        let selectCharacter = e.target.value;
+
+        if (selectCharacter == "new"){
+            newCharacterButton.classList.remove('hide');
+        }
+    })
+
 })

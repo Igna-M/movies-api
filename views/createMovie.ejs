@@ -159,6 +159,12 @@
               </div>
             <% } %>
 
+            <div class="hide" id="new-character-button">
+              <a href="/createCharacter">
+                <button id="new-character-button" class="new-op-button"><span>create new character</span></button>
+              </a>
+            </div>
+
           </div> 
 
             <!-- <% if (locals.errors && originalData.character2) { %>
@@ -351,6 +357,8 @@
                 <input type="text" name="NewGenre3" id="NewGenre3" placeholder="Type new genre" value="<%= locals.originalData ? originalData.newGenre3 : null %>">
               </div>
             <% } %>
+
+
           </div>
 
 
@@ -397,8 +405,8 @@
       
       
       <div class="width80center">
-        <%- include('./partials/list-buttons') %>
-    </div>
+        <%- include('./partials/create-buttons') %>
+      </div>
       <br>
     </main>
     <script src="/javascripts/createMovie.js"></script>
