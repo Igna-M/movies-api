@@ -252,18 +252,21 @@ input[type=file]:hover{
 /*  */
 /*  */
 
+.new-op-button span{
+  margin: 5px 5px 20px 5px;
+}
+
 .new-op-button{
   border-radius: 4px;
   background-color: #f4511e;
   border: white solid 1px;
   color: #FFFFFF;
   text-align: center;
-  font-size: 1.1em;
+  font-size: 1em;
   padding: 5px;
-  width: 200px;
+  width: 250px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
 }
 .new-op-button:hover{
   box-shadow: 2px 4px 5px 1px rgba(255, 255, 255, 0.2);
@@ -293,9 +296,6 @@ input[type=file]:hover{
   opacity: 1;
   right: 0;
 }
-
-
-
 
 
 

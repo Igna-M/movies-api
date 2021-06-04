@@ -174,5 +174,33 @@
     ],
     "release": "1979-11-11",
     "moviePoster": "moviePoster-1622737761201.jpeg"
+  },
+  {
+    "id": 12,
+    "title": "Fantasia",
+    "score": 5,
+    "characters": [
+      5
+    ],
+    "genres": [
+      3
+    ],
+    "release": "1965-11-11",
+    "moviePoster": "moviePoster-1622828131890.jpeg"
+  },
+  {
+    "id": 13,
+    "title": "Star Wars",
+    "score": 5,
+    "characters": [
+      6,
+      8
+    ],
+    "genres": [
+      2,
+      10
+    ],
+    "release": "1977-05-05",
+    "moviePoster": "moviePoster-1622832288460.jpg"
   }
 ]

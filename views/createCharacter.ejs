@@ -18,7 +18,7 @@
         <% } %>
       </div>
 
-      <form action="/newMovie" method="POST" autocomplete="on" enctype="multipart/form-data" id="form">
+      <form action="/newCharacter" method="POST" autocomplete="on" enctype="multipart/form-data" id="form">
         <div class="">
           <label for="name">Name:</label><br>
           <% if (locals.errors && errors.name) { %>
@@ -63,7 +63,7 @@
         </div>
 
         <div class="">
-          <label for="weight">Weight:</label><br>
+          <label for="weight">Weight (Kgs):</label><br>
           <% if (locals.originalData && originalData.weight) { %> 
             <select name="weight" id="weight">
             <% for (let i = 1; i < 100; i++) { %> 
@@ -274,8 +274,8 @@
 
 
           <div class="hide" id="new-movie-button">
-            <a href="/createMovie">
-              <button id="new-movie-button" class="new-op-button"><span>New movie</span></button>
+            <a href="/createMovie" id="new-movie-button" class="new-op-button">
+              <span>New movie</span>
             </a>
           </div>
 

@@ -53,7 +53,7 @@ window.addEventListener("load", () => {
 
     // New movie button
     let newMovieButton = document.querySelector("div#new-movie-button")
-    let buttonNewMovieButton = document.querySelector("button#new-movie-button")
+    // let buttonNewMovieButton = document.querySelector("a#new-movie-button")
 
     selectMovie1.addEventListener("change", function(e){
         let selectMovie = e.target.value;

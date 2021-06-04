@@ -21,6 +21,25 @@ const Movie = {
 		let movieFound = allMovies.find(oneMovie => oneMovie[field] === text);
 		return movieFound;
 	},
+
+	create: function (newMovie) {
+		let allMovies = this.findAll();
+	
+		let searchMovie = this.findByField('title', newMovie.title) // First, we check if the movie already exists.
+		if (searchMovie == undefined) {
+
+			allMovies.push(newMovie);
+			let uploadMovies = JSON.stringify(allMovies, null , 2);
+			fs.writeFileSync(dbMoviesPath, uploadMovies)
+
+			// return 'New movie created'
+
+		} else {
+			let filePath = path.resolve(__dirname,'../public/images/movies/' + newMovie.moviePoster);
+			fs.unlinkSync(filePath);			
+			// return 'Movie already exists'
+		}	
+	}
 }
 
 module.exports = Movie;

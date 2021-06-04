@@ -1,26 +1,66 @@
 [
-    {
-        "id":0,
-        "name": "None"
-    },
-    {
-        "id":1,
-        "name": "Minnie Mouse"
-    },
-    {
-        "id":2,
-        "name": "Aladdin"
-    },
-    {
-        "id":3,
-        "name": "BB-8"
-    },
-    {
-        "id":4,
-        "name": "Hercules"
-    },
-    {
-        "id":5,
-        "name": "Mickey Mouse"
-    }
+  {
+    "id": 0,
+    "name": "None"
+  },
+  {
+    "id": 1,
+    "name": "Minnie Mouse"
+  },
+  {
+    "id": 2,
+    "name": "Aladdin"
+  },
+  {
+    "id": 4,
+    "name": "Hercules"
+  },
+  {
+    "id": 5,
+    "name": "Mickey Mouse"
+  },
+  {
+    "id": 6,
+    "name": "Leia",
+    "age": 20,
+    "weight": 60,
+    "story": "Leia",
+    "movies": [],
+    "characterImage": "characterImage-1622830411212.jpeg"
+  },
+  {
+    "id": 7,
+    "name": "BB-8",
+    "age": 6,
+    "weight": 66,
+    "story": "un robotito. 6. 66ks.",
+    "movies": [
+      7,
+      9
+    ],
+    "characterImage": "characterImage-1622831282910.jpeg"
+  },
+  {
+    "id": 8,
+    "name": "Obi Wan Kenobi",
+    "age": 50,
+    "weight": 71,
+    "story": "The best jedi of the entire universe",
+    "movies": [
+      3,
+      9
+    ],
+    "characterImage": "characterImage-1622831540510.jpeg"
+  },
+  {
+    "id": 9,
+    "name": "Han Solo",
+    "age": 30,
+    "weight": 75,
+    "story": "Pilot to the millenium falcon",
+    "movies": [
+      13
+    ],
+    "characterImage": "characterImage-1622833802052.jpeg"
+  }
 ]

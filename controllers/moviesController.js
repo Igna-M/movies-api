@@ -107,10 +107,10 @@ const moviesController = {
             moviePoster: req.file.filename
         }
 
-        movies.push(newMovie);
-
-        let uploadMovies = JSON.stringify(movies, null , 2);
-        fs.writeFileSync(dbMoviesPath, uploadMovies)
+        Movies.create(newMovie)
+        // movies.push(newMovie);
+        // let uploadMovies = JSON.stringify(movies, null , 2);
+        // fs.writeFileSync(dbMoviesPath, uploadMovies)
 
         return res.redirect('/');
 
