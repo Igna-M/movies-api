@@ -38,10 +38,15 @@ const Character = {
 			let filePath = path.resolve(__dirname,'../public/images/characters/' + newCharacter.characterImage);
 			fs.unlinkSync(filePath);
 
-			// return 'Character already exists'
-			
 		}	
+	},
+
+	updateDB: function (array) {
+		let uploadCharacters = JSON.stringify(array, null , 2);
+		fs.writeFileSync(dbCharactersPath, uploadCharacters)	
 	}
+
+
 }
 
 module.exports = Character;

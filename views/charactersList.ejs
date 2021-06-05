@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+  <%- include('./partials/head') %>
+</head>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <%- include('./partials/header') %>
+
+    <main>
+      
+      <%- include('./partials/lists-buttons') %>
+      <hr>
+      <div>
+        <% if (message) { %>
+          <h2><%= message %></h2>
+        <% } %>
+      </div>
+      
+      <br>
+      
+      <!-- Characters -->
+
+      <% for (let i = 1; i < characters.length; i++) { %>
+        <div class="line-element">
+          <div class="one-line">
+            <div class="movies-card first-line">
+                <p class="line-title"><%= characters[i].name %></p>
+                <p class="line-amount">Relevant role in: <%= movies[characters[i].movies[0]].title %></p>
+            </div>
+            <div class="movies-buttons">
+                <!-- <div class="element-edit-bt">
+                  <a href="/editCharacter/<%= characters[i].id %>">
+                    <span>Edit</span>
+                  </a>
+                </div> -->
+              <a class="element-edit-bt-2" href="/editCharacter/<%= characters[i].id %>">Edit</a>
+              <!-- <form action="/editCharacter" method="GET">
+                <button type="submit" class="element-edit-bt" name="edit" value=<%= characters[i].id %> >Edit</button>
+              </form> -->
+              <form action="/deleteCharacter" method="POST">
+                  <button type="submit" class="element-delete-bt" name="delete" value=<%= characters[i].id %> >Delete</button>
+              </form>
+                
+            </div>
+          </div>
+        </div>
+      <% } %>
+      
+      <br>
+      <%- include('./partials/create-buttons') %>
+      <%- include('./partials/foot-footnote') %>
+    </main>
+  </body>
+</html>

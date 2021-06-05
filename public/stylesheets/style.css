@@ -18,7 +18,7 @@ a {
 /*  */
 /*  */
 
-form{
+form#form{
   padding: 10px;
   margin: 20px auto 40px auto;
   border-radius: 10px;
@@ -159,35 +159,24 @@ input[type=file]:hover{
 }
 
 
-/* input.double-height{
-  height: 80px;
-} */
-
-/* Buttons */
+/* Lists */
 /*  */
 /*  */
 
-.operation-element{
-  border: 2px solid #dedede;
+.line-element{
+  border: 2px solid #c9b3b3;
   background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   border-radius: 5px;
   padding: 2px;
   margin: 15px auto 15px auto;
-  max-width: 90%;
+  max-width: 70%;
   color: black;
 }
 
-.operation-element:hover{
+.line-element:hover{
   background-image: linear-gradient(135deg, #c0d8f8 0%, #a3bce6 100%);
   box-shadow: 2px 5px 10px 1px rgba(255, 255, 255, 0.2);
 }
-
-
-.operation-card p{
-  margin-top: 1px; 
-  margin-bottom: 1px; 
-}
-
 
 
 .one-line{
@@ -196,27 +185,32 @@ input[type=file]:hover{
   justify-content: space-between;
   width: 99%;
   margin: auto;
-  /* background: white; */
 }
 
 .first-line{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 50%;
+  width: 75%;
   margin: auto;
 }
 
-.operation-title {
+.movies-card p{
+  margin-top: 2px; 
+  margin-bottom: 2px; 
+}
+
+
+.line-title {
   font-weight: bold;
   text-align: left;
   margin-left: 8px;
-  width: 55%;
+  width: 80%;
   padding: 2px;
 }
 
 
-.operation-amount{
+.line-amount{
   margin-right: 8px;
   text-align:right;
   width: 45%;
@@ -251,6 +245,68 @@ input[type=file]:hover{
 /* Buttons */
 /*  */
 /*  */
+
+
+.create-button-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: auto;
+}
+
+
+.main-button-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 300px;
+  margin: auto;
+}
+
+
+.main-type-button{
+  border: rgb(0, 223, 223) solid 1px;
+  margin: 2px 10px;
+  padding: 5px 30px;
+  background:#aaf2ff;
+  color: black;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 4px;  
+}
+
+
+.main-type-button:hover{
+  box-shadow: 2px 4px 5px 1px rgba(255, 255, 255, 0.5);
+  background:#169ddb;
+}
+
+
+.type-button-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 400px;
+  margin: auto;
+}
+
+
+.type-button{
+  border: white solid 1px;
+  margin: 2px 10px;
+  padding: 5px 15px;
+  background:#f4511e;
+  color: white;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 4px;  
+}
+
+.type-button:hover{
+  box-shadow: 2px 4px 5px 1px rgba(255, 255, 255, 0.5);
+  background:#ce390c;
+}
 
 .new-op-button span{
   margin: 5px 5px 20px 5px;
@@ -297,45 +353,65 @@ input[type=file]:hover{
   right: 0;
 }
 
-
-
-.operation-buttons{
+.movies-buttons{
+  margin-top: 3px;
   width: 10%;
+  min-width: 150px;
 }
 
-.operation-edit-bt{
+
+.element-edit-bt-2 {
   background-image: radial-gradient( circle 935px at 3.1% 5.8%,  rgba(85, 233, 0, 0.918) 0%, rgba(94, 255, 0) 100.2% );
+  /* margin: 5px auto; */
+  padding: 1px 45px;
+  width: 80%;
   color: black;
   border-radius: 4px;
-  /* border: 2px solid #4CAF50; */
-  width: 80%;
-  margin-top: 1px;
-  margin-bottom: 2px;
-  font-size: 0.8em;
+  border: 2px solid #0bac11;
+  margin: 2px auto 2px auto;
+  font-size: 1em;
   transition-duration: 0.4s;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.operation-edit-bt:hover {
+.element-edit-bt-2:hover {
   background-image: radial-gradient( circle 935px at 3.1% 5.8%,  rgb(70, 200, 0) 0%, rgb(50, 136, 0) 100.2% );
   color: white;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.operation-delete-bt{
+
+.element-edit-bt{
+  background-image: radial-gradient( circle 935px at 3.1% 5.8%,  rgba(85, 233, 0, 0.918) 0%, rgba(94, 255, 0) 100.2% );
+  color: black;
+  border-radius: 4px;
+  border: 2px solid #0bac11;
+  width: 80%;
+  margin: 1px auto 2px auto;
+  font-size: 1em;
+  transition-duration: 0.4s;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.element-edit-bt:hover {
+  background-image: radial-gradient( circle 935px at 3.1% 5.8%,  rgb(70, 200, 0) 0%, rgb(50, 136, 0) 100.2% );
+  color: white;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.element-delete-bt{
   background-image: linear-gradient( 111.2deg,  rgb(233, 19, 19) 1.7%, rgb(235, 22, 19) 98.7% );
   color: white;
   border-radius: 4px;
   /* border: 2px solid red; */
   width: 80%;
-  margin-top: 2px;
-  margin-bottom: 1px;
-  font-size: 0.8em;
+  margin: 5px auto 3px auto;
+  font-size: 1em;
   transition-duration: 0.4s;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.operation-delete-bt:hover {
+.element-delete-bt:hover {
   background-image: linear-gradient( 111.2deg,  rgba(255,5,5,1) 22.7%, rgb(250, 2, 2) 98.7% );
   color: white;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);

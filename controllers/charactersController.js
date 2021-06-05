@@ -81,6 +81,35 @@ const charactersController = {
         
         return res.redirect('/')
     },
+
+
+    charactersList: function(req, res) {
+        
+        let movies = Movies.findAll()
+        let characters = Characters.findAll()
+        let genres = Genres.findAll()
+
+        let message = 'Characters` list'
+
+        let view = {
+            movies: movies,
+            characters: characters,
+            genres: genres,
+            message: message
+        }
+
+
+        return res.render('charactersList', view)
+    },
+
+    editCharacter: function(req, res) {
+        return res.send('editCharacter')
+    },
+
+    deleteCharacter: function(req, res) {
+        return res.send('deleteCharacter', req.body)
+    },
+
 }
 
 module.exports = charactersController

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+  <%- include('./partials/head') %>
+</head>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <%- include('./partials/header') %>
+
+    <main>
+      
+      <%- include('./partials/lists-buttons') %>
+      <hr>
+      <div>
+        <% if (message) { %>
+          <h2><%= message %></h2>
+        <% } %>
+        <hr>
+      </div>
+      <!-- Movies -->
+      
+      <% for (let i = 0; i < movies.length; i++) { %>
+        <div class="line-element">
+          <div class="one-line">
+            <div class="movies-card first-line">
+                <p class="line-title"><%= movies[i].title %> (<%= movies[i].release.split("-")[0] %>)</p>
+                <p class="line-amount"><%= genres[movies[i].genres[0]].name %></p>
+            </div>
+            <div class="movies-buttons">
+              <!-- <div class="element-edit-bt">
+                <a href="/editMovies/<%= movies[i].id %>">
+                  <span>Edit</span>
+                </a>
+              </div> -->
+
+              <a class="element-edit-bt-2" href="/editMovie/<%= movies[i].id %>">Edit</a>
+
+              <!-- <form action="/editMovie" method="GET">
+                <button type="submit" class="element-edit-bt" name="edit" value=<%= movies[i].id %> >Edit</button>
+              </form> -->
+              <form action="/deleteMovie" method="POST">
+                <button type="submit" class="element-delete-bt" name="delete" value=<%= movies[i].id %>>Delete</button>
+              </form>
+                
+            </div>
+          </div>
+        </div>
+      <% } %>
+      
+      <br>
+      <%- include('./partials/create-buttons') %>
+      <%- include('./partials/foot-footnote') %>
+    </main>
+  </body>
+</html>

@@ -36,8 +36,6 @@ const moviesController = {
             characters: characters
         }
 
-        // console.log(view);
-
         return res.render('createMovie', view);
     },
 
@@ -48,8 +46,7 @@ const moviesController = {
         
         if (!errors.isEmpty()) {
             if (req.file){
-                let filePath = path.resolve(__dirname,'../public/images/movies/' + req.file.filename);
-                fs.unlinkSync(filePath);
+                Movies.deleteImage(req.file.filename)
             }
 
             let message = 'Sorry, something went wrong. Please, try again.'
@@ -92,8 +89,7 @@ const moviesController = {
                 selectedGenres.push(Number(optionsGenres[i]));
             } else if (optionsGenres[i] == 'new' && newGenres[i] != 'null'){
                 newGenreID = Genres.create(newGenres[i])
-                // console.log('Crear nuevo género'); // Acá va la función para revisar que el género no existe y agregarlo.
-                selectedGenres.push(newGenreID);// Tengo que recibir el nuevo ID del género para agregarlo.
+                selectedGenres.push(newGenreID);
             } 
         }
 
@@ -108,17 +104,70 @@ const moviesController = {
         }
 
         Movies.create(newMovie)
-        // movies.push(newMovie);
-        // let uploadMovies = JSON.stringify(movies, null , 2);
-        // fs.writeFileSync(dbMoviesPath, uploadMovies)
 
         return res.redirect('/');
 
-        // return res.send(newMovie)
-        // return res.send(req.body)
     },
 
+    moviesList: function(req, res) {
+        
+        let movies = Movies.findAll()
+        let characters = Characters.findAll()
+        let genres = Genres.findAll()
 
+        let message = 'Movies` list'
+
+        let view = {
+            movies: movies,
+            characters: characters,
+            genres: genres,
+            message: message
+        }
+
+        return res.render('moviesList', view);
+    },
+
+    editMovie: function(req, res) {
+        return res.send('editMovie')
+    },
+
+    deleteMovie: function(req, res) {
+
+        let deleteID = req.body.delete;
+        let movieToDelete = Movies.findByPk(deleteID)
+        let newList = Movies.findAll().filter(movie => movie.id != deleteID);
+
+        // Delete movies appearence on characters.
+        let charactersInMovie = Characters.findAll().filter(character => character.movies.some((movie) => movie == deleteID));
+
+        for (let i = 0; i < charactersInMovie.length; i++){
+            moviesNow = charactersInMovie[i].movies.filter((character) => character != deleteID)
+            charactersInMovie[i].movies = moviesNow
+        }
+
+        // Modify movies un characters
+        let characters = Characters.findAll()
+        let newCharList
+
+        for (let i = 0; i < charactersInMovie.length; i++){
+            newCharList = characters.map(function(character){
+                if (character.id == charactersInMovie[i].id){
+                    character = charactersInMovie[i]
+                }
+                return character
+            })
+        }
+
+        Characters.updateDB(newCharList)
+        Movies.updateDB(newList)
+
+        // Delete moviePoster
+        if (movieToDelete.moviePoster){
+            Movies.deleteImage(movieToDelete.moviePoster)
+        }
+
+        return res.redirect('/moviesList')
+    },
 
 }
 

@@ -5,7 +5,9 @@
     "age": 0,
     "weight": 0,
     "story": "",
-    "movies": [],
+    "movies": [
+      0
+    ],
     "characterImage": "characterImage-1622830411212.jpeg"
   },
   {
@@ -28,8 +30,10 @@
     "weight": 60,
     "story": "Leia",
     "movies": [
-      7,
-      9,
+      1,
+      2,
+      3,
+      4,
       5
     ],
     "characterImage": "characterImage-1622830411212.jpeg"
@@ -41,8 +45,8 @@
     "weight": 60,
     "story": "Leia",
     "movies": [
-      7,
-      9,
+      4,
+      6,
       5
     ],
     "characterImage": "characterImage-1622830411212.jpeg"
@@ -55,8 +59,9 @@
     "story": "Leia",
     "movies": [
       7,
+      8,
       9,
-      5
+      1
     ],
     "characterImage": "characterImage-1622830411212.jpeg"
   },
@@ -67,9 +72,9 @@
     "weight": 60,
     "story": "Leia",
     "movies": [
-      7,
-      9,
-      5
+      1,
+      2,
+      3
     ],
     "characterImage": "characterImage-1622830411212.jpeg"
   },
@@ -80,8 +85,8 @@
     "weight": 66,
     "story": "un robotito. 6. 66ks.",
     "movies": [
-      7,
-      9
+      5,
+      6
     ],
     "characterImage": "characterImage-1622831282910.jpeg"
   },
@@ -92,7 +97,8 @@
     "weight": 71,
     "story": "The best jedi of the entire universe",
     "movies": [
-      3,
+      7,
+      8,
       9
     ],
     "characterImage": "characterImage-1622831540510.jpeg"
@@ -104,7 +110,9 @@
     "weight": 75,
     "story": "Pilot to the millenium falcon",
     "movies": [
-      13
+      13,
+      1,
+      2
     ],
     "characterImage": "characterImage-1622833802052.jpeg"
   }

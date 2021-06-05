@@ -11,14 +11,13 @@ const Movie = {
 	},
 
 	findByPk: function (id) {
-		let allMovies = this.findAll();
-		let movieFound = allMovies.find(oneMovie => oneMovie.id === id);
+		let movieFound = this.findAll().find(oneMovie => oneMovie.id == id);
 		return movieFound;
 	},
 
 	findByField: function (field, text) {
 		let allMovies = this.findAll();
-		let movieFound = allMovies.find(oneMovie => oneMovie[field] === text);
+		let movieFound = allMovies.find(oneMovie => oneMovie[field] == text);
 		return movieFound;
 	},
 
@@ -39,7 +38,18 @@ const Movie = {
 			fs.unlinkSync(filePath);			
 			// return 'Movie already exists'
 		}	
+	},
+
+	deleteImage: function (image) {
+		let imagePath = path.resolve(__dirname,'../public/images/movies/' + image);
+		fs.unlinkSync(imagePath);
+	},
+
+	updateDB: function (array) {
+		let uploadMovies = JSON.stringify(array, null , 2);
+			fs.writeFileSync(dbMoviesPath, uploadMovies)
 	}
+
 }
 
 module.exports = Movie;

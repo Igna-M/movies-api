@@ -22,6 +22,19 @@ router.get('/createCharacter', charactersController.createCharacter);
 router.post('/newCharacter', uploadCharacterImage.single('characterImage'), createCharacterValidation, charactersController.newCharacter);
 
 
+router.get('/moviesList', moviesController.moviesList);
+router.get('/charactersList', charactersController.charactersList);
+
+
+router.get('/editMovie/:id', moviesController.editMovie);
+router.post('/deleteMovie', moviesController.deleteMovie);
+
+router.get('/editCharacter/:id', charactersController.editCharacter);
+router.post('/deleteCharacter', charactersController.deleteCharacter);
+
+
+
+
 // API
 const apiController = require('../controllers/apiControllers/apiController');
 router.get('/api/moviesFront', apiController.moviesFront);
