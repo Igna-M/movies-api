@@ -1,43 +1,88 @@
-const db = require("../../database/models");
-const Products = db.Product
-const Categories = db.Category
-const Op = db.Sequelize.Op
+const Movies = require('../../models/Movie');
+const Characters = require('../../models/Character');
+const Genres = require('../../models/Genre');
+
+// const db = require("../../database/models");
+// const Products = db.Product
+// const Categories = db.Category
+// const Op = db.Sequelize.Op
 
 
-const productsController = {
+const apiController = {
 
-    productsList: (req,res) =>{
-        Products.findAll({
-            include: [{association: 'categories'}]
-        })
-        .then(productos => {
-            return res.status(200).json({
-                total: productos.length,
-                data: productos,
-                status: 200
-            })
-        })        
-    },
-
-    showProduct: (req,res) =>{
-        Products.findByPk(req.params.id)
-        .then(producto => {
-            return res.status(200).json({
-                data: producto,
-                status: 200
-            })
+    moviesFront: (req,res) =>{
+        let movies = Movies.findAll()
+    
+        return res.status(200).json({
+            total: movies.length,
+            data: movies,
+            status: 200
         })
     },
 
-    storeProduct: (req,res) =>{
-        Products.create(req.body)
-        .then(producto => {
-            return res.status(200).json({
-                data: producto,
-                status: 200,
-                created: 'ok'
-            })
-        })        
+    charactersFront: (req,res) =>{
+        let characters = Characters.findAll()
+    
+        return res.status(200).json({
+            total: characters.length,
+            data: characters,
+            status: 200
+        })
+    },
+
+    genresFront: (req,res) =>{
+        let genres = Genres.findAll()
+    
+        return res.status(200).json({
+            total: genres.length,
+            data: genres,
+            status: 200
+        })
+    },
+
+
+
+
+    movies: (req,res) =>{
+        let movies = Movies.findAll()
+        let characters = Characters.findAll()
+        let genres = Genres.findAll()
+    
+    
+
+        //     .then(productos => {
+    //         return res.status(200).json({
+    //             total: productos.length,
+    //             data: productos,
+    //             status: 200
+    //         })
+    //     })        
+    // },
+
+    // showProduct: (req,res) =>{
+    //     Products.findByPk(req.params.id)
+    //     .then(producto => {
+    //         return res.status(200).json({
+    //             data: producto,
+    //             status: 200
+    //         })
+    //     })
+    // },
+
+    // storeProduct: (req,res) =>{
+    //     Products.create(req.body)
+    //     .then(producto => {
+    //         return res.status(200).json({
+    //             data: producto,
+    //             status: 200,
+    //             created: 'ok'
+    //         })
+    //     })        
+    return res.status(200).json({
+        total: movies.length,
+        data: movies,
+        status: 200
+    })
     },
 
     deleteProduct: (req,res) =>{
@@ -162,4 +207,4 @@ const productsController = {
 
 }
 
-module.exports = productsController;
+module.exports = apiController;

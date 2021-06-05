@@ -1,23 +1,64 @@
 [
   {
     "id": 0,
-    "name": "None"
+    "name": "None",
+    "age": 0,
+    "weight": 0,
+    "story": "",
+    "movies": [],
+    "characterImage": "characterImage-1622830411212.jpeg"
   },
   {
     "id": 1,
-    "name": "Minnie Mouse"
+    "name": "Minnie Mouse",
+    "age": 20,
+    "weight": 60,
+    "story": "Leia",
+    "movies": [
+      7,
+      9,
+      5
+    ],
+    "characterImage": "characterImage-1622830411212.jpeg"
   },
   {
     "id": 2,
-    "name": "Aladdin"
+    "name": "Aladdin",
+    "age": 20,
+    "weight": 60,
+    "story": "Leia",
+    "movies": [
+      7,
+      9,
+      5
+    ],
+    "characterImage": "characterImage-1622830411212.jpeg"
   },
   {
     "id": 4,
-    "name": "Hercules"
+    "name": "Hercules",
+    "age": 20,
+    "weight": 60,
+    "story": "Leia",
+    "movies": [
+      7,
+      9,
+      5
+    ],
+    "characterImage": "characterImage-1622830411212.jpeg"
   },
   {
     "id": 5,
-    "name": "Mickey Mouse"
+    "name": "Mickey Mouse",
+    "age": 20,
+    "weight": 60,
+    "story": "Leia",
+    "movies": [
+      7,
+      9,
+      5
+    ],
+    "characterImage": "characterImage-1622830411212.jpeg"
   },
   {
     "id": 6,
@@ -25,7 +66,11 @@
     "age": 20,
     "weight": 60,
     "story": "Leia",
-    "movies": [],
+    "movies": [
+      7,
+      9,
+      5
+    ],
     "characterImage": "characterImage-1622830411212.jpeg"
   },
   {

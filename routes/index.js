@@ -15,10 +15,18 @@ const charactersController = require('../controllers/charactersController');
 
 
 router.get('/', mainController.index);
+router.get('/login', mainController.login);
 router.get('/createMovie', moviesController.createMovie);
 router.post('/newMovie', uploadMovieImage.single('moviePoster'), createMovieValidation, moviesController.newMovie);
 router.get('/createCharacter', charactersController.createCharacter);
 router.post('/newCharacter', uploadCharacterImage.single('characterImage'), createCharacterValidation, charactersController.newCharacter);
+
+
+// API
+const apiController = require('../controllers/apiControllers/apiController');
+router.get('/api/moviesFront', apiController.moviesFront);
+router.get('/api/charactersFront', apiController.charactersFront);
+router.get('/api/genresFront', apiController.genresFront);
 
 
 

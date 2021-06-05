@@ -2,160 +2,163 @@
   {
     "id": 0,
     "title": "Hercules",
-    "score": "4",
+    "score": 5,
     "characters": [
-      "1",
-      "",
-      ""
+      6,
+      8
     ],
     "genres": [
-      "1",
-      "0",
-      "0"
+      1,
+      10
     ],
-    "release": "1997-01-01",
-    "moviePoster": "moviePoster-1622674659431.jpeg"
+    "release": "1977-05-05",
+    "moviePoster": "moviePoster-1622832288460.jpg"
   },
   {
     "id": 1,
     "title": "Malevola",
-    "score": "2",
+    "score": 5,
     "characters": [
-      "1",
-      "0",
-      "0"
+      2,
+      8
     ],
     "genres": [
-      "5",
-      "new",
-      "0"
+      3,
+      10
     ],
-    "newGenres": [
-      "",
-      null,
-      ""
-    ],
-    "release": "1999-12-22",
-    "moviePoster": "moviePoster-1622732718386.jpeg"
+    "release": "1977-05-05",
+    "moviePoster": "moviePoster-1622832288460.jpg"
   },
   {
     "id": 2,
     "title": "Fantasia",
-    "score": "4",
+    "score": 3,
     "characters": [
-      "5",
-      "0",
-      "0"
+      6,
+      8
     ],
     "genres": [
-      "10",
-      ""
+      4,
+      10
     ],
-    "newGenres": [
-      "",
-      null,
-      ""
-    ],
-    "release": "1956-12-22",
-    "moviePoster": "moviePoster-1622734150983.jpeg"
+    "release": "1977-05-05",
+    "moviePoster": "moviePoster-1622832288460.jpg"
   },
   {
     "id": 3,
-    "title": "Fantasia",
-    "score": "4",
+    "title": "Fantasia II",
+    "score": 5,
     "characters": [
-      "5",
-      "0",
-      "0"
+      5,
+      8
     ],
     "genres": [
-      "10",
-      "Musical"
+      5,
+      10
     ],
-    "release": "1956-12-22",
-    "moviePoster": "moviePoster-1622734362402.jpeg"
+    "release": "1977-05-05",
+    "moviePoster": "moviePoster-1622832288460.jpg"
   },
   {
     "id": 4,
-    "title": "Fantasia",
-    "score": "5",
+    "title": "Otra pelicula",
+    "score": 5,
     "characters": [
-      "1"
+      6,
+      8
     ],
     "genres": [
-      "Musicales",
-      "Musical"
+      6,
+      10
     ],
-    "release": "1965-12-22",
-    "moviePoster": "moviePoster-1622734744031.jpeg"
+    "release": "1977-05-05",
+    "moviePoster": "moviePoster-1622832288460.jpg"
   },
   {
     "id": 5,
     "title": "Fantasia II",
-    "score": "4",
-    "characters": [],
-    "genres": [
-      "Musicales",
-      "Drama"
+    "score": 5,
+    "characters": [
+      6,
+      8
     ],
-    "release": "2021-12-22",
-    "moviePoster": "moviePoster-1622735314374.jpeg"
+    "genres": [
+      7,
+      10
+    ],
+    "release": "1977-05-05",
+    "moviePoster": "moviePoster-1622832288460.jpg"
   },
   {
     "id": 6,
-    "title": "Fantasia II",
-    "score": "4",
-    "characters": [],
-    "genres": [
-      "Musicales",
-      "Action"
+    "title": "Fantasia II bis",
+    "score": 5,
+    "characters": [
+      6,
+      8
     ],
-    "release": "2021-12-22",
-    "moviePoster": "moviePoster-1622735489722.jpeg"
+    "genres": [
+      8,
+      10
+    ],
+    "release": "1977-05-05",
+    "moviePoster": "moviePoster-1622832288460.jpg"
   },
   {
     "id": 7,
-    "title": "Fantasia II",
-    "score": "4",
-    "characters": [],
-    "genres": [
-      "Musicales",
-      "Fantsay"
+    "title": "Fantasia II - v3",
+    "score": 5,
+    "characters": [
+      6,
+      8
     ],
-    "release": "2021-12-22",
-    "moviePoster": "moviePoster-1622735555620.jpeg"
+    "genres": [
+      9,
+      10
+    ],
+    "release": "1977-05-05",
+    "moviePoster": "moviePoster-1622832288460.jpg"
   },
   {
     "id": 8,
-    "title": "Fantasia II",
-    "score": "4",
-    "characters": [],
-    "genres": [
-      "Fantsay",
-      "Fantasy"
+    "title": "Fantasia III",
+    "score": 5,
+    "characters": [
+      6,
+      8
     ],
-    "release": "2021-12-22",
-    "moviePoster": "moviePoster-1622735621331.jpeg"
+    "genres": [
+      2,
+      10
+    ],
+    "release": "1977-05-05",
+    "moviePoster": "moviePoster-1622832288460.jpg"
   },
   {
     "id": 9,
-    "title": "Fantasia II",
-    "score": "4",
-    "characters": [],
-    "genres": [
-      "Western",
-      "Detectives"
+    "title": "Fantasia IV",
+    "score": 5,
+    "characters": [
+      5,
+      8
     ],
-    "release": "2021-12-22",
-    "moviePoster": "moviePoster-1622736058062.jpeg"
+    "genres": [
+      2,
+      10
+    ],
+    "release": "1977-05-05",
+    "moviePoster": "moviePoster-1622832288460.jpg"
   },
   {
     "id": 10,
-    "title": "Fantasia II",
+    "title": "Fantasia V",
     "score": "4",
-    "characters": [],
+    "characters": [
+      6,
+      4
+    ],
     "genres": [
-      "9",
+      3,
       1,
       17
     ],

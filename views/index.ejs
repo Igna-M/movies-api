@@ -4,37 +4,51 @@
 </head>
 <html>
   <head>
-    <title></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
   </head>
   <body>
-
-    <h2>Si está logueado muestra el logout</h2>
-    <h2>Si no está logueado muestra el loguin y el register</h2>
-
     <%- include('./partials/header') %>
 
     <main>
       
 
-      <h1>La entrada debería ser un login.</h1>
-      <br>
-      <h2>Si está loogueado, que pase a la página con la autorización para usar la api.</h2>
-      <p>También deberías poder ver las opciones de listas</p>
-      <p>Y el botón para crear una película (CRUD)</p>
-      <% if (message) { %>
-        <h2><%= message %></h2>
-      <% } %>
+      <!-- Movies -->
       <div>
-      
-        
-
+        <% for (let i = 0; i < movies.length; i++) { %>
+          <p><%= movies[i].title %> </p>
+          <p><%= movies[i].release %> </p>
+          <p><%= genres[movies[i].genres[0]].name %> </p>
+          
+          <br>
+          <hr>
+        <% } %>
       </div>
+
       <br>
       <hr>
-      <h2>Me parece que no neecsitamos estos botones.</h2>
+      <br>
+      <hr>
+      <!-- Characters -->
+      <div>
+        <% for (let i = 1; i < characters.length; i++) { %>
+          <p><%= characters[i].name %> </p>
+          <p><%= movies[characters[i].movies[0]].title %> </p>         
+          <br>
+          <hr>
+        <% } %>
+      </div>
+      
+      <br>
+      
+      <div>
+        <% if (message) { %>
+          <h2><%= message %></h2>
+        <% } %>
+      
+        <h1>Agregar Info de cómo usar las APIS</h1>
+      </div>
+      <br>
       <%- include('./partials/create-buttons') %>
-
     </main>
   </body>
 </html>
