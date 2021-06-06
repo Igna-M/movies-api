@@ -12,33 +12,7 @@
     <main>
       
       <%- include('./partials/lists-buttons') %>
-      <hr>
-      <!-- Movies -->
-      <div>
-        <% for (let i = 0; i < movies.length; i++) { %>
-          <p><%= movies[i].title %> </p>
-          <p><%= movies[i].release %> </p>
-          <p><%= genres[movies[i].genres[0]].name %> </p>
-          
-          <br>
-          <hr>
-        <% } %>
-      </div>
-
-      <br>
-      <hr>
-      <br>
-      <hr>
-      <!-- Characters -->
-      <div>
-        <% for (let i = 1; i < characters.length; i++) { %>
-          <p><%= characters[i].name %> </p>
-          <p><%= movies[characters[i].movies[0]].title %> </p>         
-          <br>
-          <hr>
-        <% } %>
-      </div>
-      
+      <hr>     
       <br>
       
       <div>
