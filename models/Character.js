@@ -50,7 +50,21 @@ const Character = {
 	updateDB: function (array) {
 		let uploadCharacters = JSON.stringify(array, null , 2);
 		fs.writeFileSync(dbCharactersPath, uploadCharacters)	
-	}
+	},
+
+
+	replace: function (updatedCharacter) {
+		let characcters = this.findAll()
+		let newCharacterDB = characcters.map(function(character){
+
+            if (character.id == updatedCharacter.id){
+                character = updatedCharacter
+            }
+            return character
+        })
+		this.updateDB(newCharacterDB)
+	},
+
 
 }
 

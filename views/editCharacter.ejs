@@ -19,7 +19,9 @@
         <% } %>
       </div>
 
-      <form action="/editCharacter" method="POST" autocomplete="on" enctype="multipart/form-data" id="form">
+      <form action="/updateCharacter" method="POST" autocomplete="on" enctype="multipart/form-data" id="form">
+
+        <input type="hidden" name="id" value="<%= character.id %>">
         <div class="">
           <label for="name">Name:</label><br>
           <% if (locals.errors && errors.name) { %>
@@ -121,11 +123,6 @@
             <label for="movie1">Appears in:</label><br>
             <% if (locals.originalData && originalData.movie1) { %> 
               <select name="movie1" id="movie1">
-                <% if (originalData.movie1 == 'null') { %> 
-                  <option value='null' selected>None</option>
-                <% } else { %>
-                  <option value='null'>None</option>
-                <% } %>
                 <% for (let i = 0; i < movies.length; i++) { %> 
                   <% if (originalData.movie1 == movies[i].id) { %> 
                     <option value="<%= movies[i].id %>" selected><%= movies[i].title %></option>
@@ -133,16 +130,11 @@
                     <option value="<%= movies[i].id %>" ><%= movies[i].title %></option>
                   <% } %>
                 <% } %>
-                <% if (originalData.movie1 == 'new') { %> 
-                  <option selected value='new'>Add new movie</option>
-                <% } else { %>
-                  <option value='new'>Add new movie</option>
-                <% } %>
               </select>
             <% } else { %>
               <select name="movie1" id="movie1">
                 <% for (let i = 0; i < movies.length; i++) { %>
-                  <% if (i == character.movies[0]) { %> 
+                  <% if (movies[i].id == character.movies[0]) { %> 
                     <option value="<%= movies[i].id %>" selected><%= movies[i].title %></option>
                   <% } else { %>
                     <option value="<%= movies[i].id %>"><%= movies[i].title %></option>
@@ -157,11 +149,6 @@
             <label for="movie2">also appears in:</label><br>
             <% if (locals.originalData && originalData.movie2) { %> 
               <select name="movie2" id="movie2">
-                <% if (originalData.movie2 == 'null') { %> 
-                  <option value='null' selected>None</option>
-                <% } else { %>
-                  <option value='null'>None</option>
-                <% } %>
                 <% for (let i = 0; i < movies.length; i++) { %> 
                   <% if (originalData.movie2 == movies[i].id) { %> 
                     <option value="<%= movies[i].id %>" selected><%= movies[i].title %></option>
@@ -169,16 +156,11 @@
                     <option value="<%= movies[i].id %>" ><%= movies[i].title %></option>
                   <% } %>
                 <% } %>
-                <% if (originalData.movie2 == 'new') { %> 
-                  <option selected value='new'>Add new movie</option>
-                <% } else { %>
-                  <option value='new'>Add new movie</option>
-                <% } %>
               </select>
             <% } else { %>
               <select name="movie2" id="movie2">
                 <% for (let i = 0; i < movies.length; i++) { %>
-                  <% if (i == character.movies[1]) { %> 
+                  <% if (movies[i].id == character.movies[1]) { %> 
                     <option value="<%= movies[i].id %>" selected><%= movies[i].title %></option>
                   <% } else { %>
                     <option value="<%= movies[i].id %>"><%= movies[i].title %></option>
@@ -192,11 +174,6 @@
             <label for="movie3">also appears in:</label><br>
             <% if (locals.originalData && originalData.movie3) { %> 
               <select name="movie3" id="movie3">
-                <% if (originalData.movie3 == 'null') { %> 
-                  <option value='null' selected>None</option>
-                <% } else { %>
-                  <option value='null'>None</option>
-                <% } %>
                 <% for (let i = 0; i < movies.length; i++) { %> 
                   <% if (originalData.movie3 == movies[i].id) { %> 
                     <option value="<%= movies[i].id %>" selected><%= movies[i].title %></option>
@@ -204,16 +181,11 @@
                     <option value="<%= movies[i].id %>" ><%= movies[i].title %></option>
                   <% } %>
                 <% } %>
-                <% if (originalData.movie3 == 'new') { %> 
-                  <option selected value='new'>Add new movie</option>
-                <% } else { %>
-                  <option value='new'>Add new movie</option>
-                <% } %>
               </select>
             <% } else { %>
               <select name="movie3" id="movie3">
                 <% for (let i = 0; i < movies.length; i++) { %>
-                  <% if (i == character.movies[2]) { %> 
+                  <% if (movies[i].id == character.movies[2]) { %> 
                     <option value="<%= movies[i].id %>" selected><%= movies[i].title %></option>
                   <% } else { %>
                     <option value="<%= movies[i].id %>"><%= movies[i].title %></option>
@@ -227,11 +199,6 @@
             <label for="movie4">also appears in:</label><br>
             <% if (locals.originalData && originalData.movie4) { %> 
               <select name="movie4" id="movie4">
-                <% if (originalData.movie4 == 'null') { %> 
-                  <option value='null' selected>None</option>
-                <% } else { %>
-                  <option value='null'>None</option>
-                <% } %>
                 <% for (let i = 0; i < movies.length; i++) { %> 
                   <% if (originalData.movie4 == movies[i].id) { %> 
                     <option value="<%= movies[i].id %>" selected><%= movies[i].title %></option>
@@ -239,16 +206,11 @@
                     <option value="<%= movies[i].id %>" ><%= movies[i].title %></option>
                   <% } %>
                 <% } %>
-                <% if (originalData.movie4 == 'new') { %> 
-                  <option selected value='new'>Add new movie</option>
-                <% } else { %>
-                  <option value='new'>Add new movie</option>
-                <% } %>
               </select>
             <% } else { %>
               <select name="movie4" id="movie4">
                 <% for (let i = 0; i < movies.length; i++) { %>
-                  <% if (i == character.movies[3]) { %> 
+                  <% if (movies[i].id == character.movies[3]) { %> 
                     <option value="<%= movies[i].id %>" selected><%= movies[i].title %></option>
                   <% } else { %>
                     <option value="<%= movies[i].id %>"><%= movies[i].title %></option>
@@ -262,11 +224,6 @@
             <label for="movie4">also appears in:</label><br>
             <% if (locals.originalData && originalData.movie5) { %> 
               <select name="movie5" id="movie5">
-                <% if (originalData.movie5 == 'null') { %> 
-                  <option value='null' selected>None</option>
-                <% } else { %>
-                  <option value='null'>None</option>
-                <% } %>
                 <% for (let i = 0; i < movies.length; i++) { %> 
                   <% if (originalData.movie5 == movies[i].id) { %> 
                     <option value="<%= movies[i].id %>" selected><%= movies[i].title %></option>
@@ -274,16 +231,11 @@
                     <option value="<%= movies[i].id %>" ><%= movies[i].title %></option>
                   <% } %>
                 <% } %>
-                <% if (originalData.movie5 == 'new') { %> 
-                  <option selected value='new'>Add new movie</option>
-                <% } else { %>
-                  <option value='new'>Add new movie</option>
-                <% } %>
               </select>
             <% } else { %>
               <select name="movie5" id="movie5">
                 <% for (let i = 0; i < movies.length; i++) { %>
-                  <% if (i == character.movies[4]) { %> 
+                  <% if (movies[i].id == character.movies[4]) { %> 
                     <option value="<%= movies[i].id %>" selected><%= movies[i].title %></option>
                   <% } else { %>
                     <option value="<%= movies[i].id %>"><%= movies[i].title %></option>
@@ -292,13 +244,6 @@
               </select>
             <% } %>
           </div>
-
-<!-- 
-          <div class="hide" id="new-movie-button">
-            <a href="/createMovie" id="new-movie-button" class="new-op-button">
-              <span>New movie</span>
-            </a>
-          </div> -->
 
 
         </div >
@@ -321,21 +266,8 @@
 
         <br>
         
-
-        <!-- 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00  -->
-        <!-- 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00  -->
-        <!-- 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00  -->
-        <!-- 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00  -->
-        <!-- 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00  -->
-        <!-- 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00  -->
-        
-        <!-- 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00  -->
-        <!-- 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00  -->
-        <!-- 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00 00 0 0 00 0 0 00  -->
-        
-        
         <div class="">
-          <input type="submit" value="Create character">
+          <input type="submit" value="Edit character">
         </div>
         
         <br>

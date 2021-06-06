@@ -13,6 +13,7 @@ const Movies = require('../models/Movie');
 const Characters = require('../models/Character');
 const Genres = require('../models/Genre');
 const Character = require('../models/Character');
+const Movie = require('../models/Movie');
 
 // const fetch = require("node-fetch");
 
@@ -125,11 +126,7 @@ const charactersController = {
         let movies = Movies.findAll()
 
         for (let i = 0; i < moviesInCharacter.length; i++){
-            // console.log('-----------------------------');
-            // console.log('');
-            // console.log('Nueva vuelta de i;', i);
-            // console.log(moviesInCharacter[i]);
-            // console.log('');
+
             movies = movies.map(function(movie){
                 if (movie.id == moviesInCharacter[i].id){
                     // console.log("Pre", movie);
@@ -144,11 +141,6 @@ const charactersController = {
         Movies.updateDB(movies)
         Characters.updateDB(newList)
         
-        // let view = {
-        //     movies: movies,
-        //     newList: newList
-        // }
-
         // Delete moviePoster
         if (movieToDelete.moviePoster){
             Character.deleteImage(characterToDelete.characterImage)
@@ -178,6 +170,55 @@ const charactersController = {
         return res.render('editCharacter', view)
     },
 
+
+    updateCharacter: function(req,res) {
+
+        let character = Character.findByPk(req.body.id)
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            if (req.file){
+                console.log('Image deleted');                
+                Character.deleteImage(req.file.filename)
+            }
+
+            let message = 'Sorry, something went wrong. Please, try again.'
+
+            let movies = Movie.findAll()
+
+            let view = {
+                movies: movies,
+                message: message,
+                character: character,
+                errors: errors.mapped(),
+                originalData: req.body
+            }
+            return res.render('editCharacter', view);
+        }
+
+
+        let newMovies = [Number(req.body.movie1), Number(req.body.movie2),Number(req.body.movie3),Number(req.body.movie4),Number(req.body.movie5)]
+        
+        let imageInEditedCharacter = character.characterImage
+        if (req.file){
+            imageInEditedCharacter = req.file.filename
+            Character.deleteImage(character.characterImage)
+        } 
+        
+        let updatedCharacter = {
+            id: Number(req.body.id),
+            name: req.body.name,
+            age: Number(req.body.age),
+            weight: Number(req.body.weight),
+            story: req.body.story,
+            movies: newMovies,
+            characterImage: imageInEditedCharacter
+        }
+
+        Character.replace(updatedCharacter)
+
+        return res.redirect('CharactersList')
+    }
 }
 
 module.exports = charactersController

@@ -18,20 +18,20 @@
   },
   {
     "id": 1,
-    "title": "Malevola",
-    "score": 5,
+    "title": "Malefica",
+    "score": 3,
     "characters": [
-      2,
-      8,
-      9
-    ],
-    "genres": [
-      3,
       10,
+      6,
       0
     ],
-    "release": "1979-05-05",
-    "moviePoster": "moviePoster-1622832288460.jpg"
+    "genres": [
+      4,
+      5,
+      0
+    ],
+    "release": "2015-05-05",
+    "moviePoster": "moviePoster-1623021120150.jpeg"
   },
   {
     "id": 2,

@@ -3,11 +3,12 @@ var router = express.Router();
 
 var path = require('path');
 const createMovieValidation = require('../middlewares/createMovieValidation');
-const editMovieValidation = require('../middlewares/editMovieValidation');
+const updateMovieValidation = require('../middlewares/updateMovieValidation');
 const uploadMovieImage = require('../middlewares/moviesMulter')
 
+
 const createCharacterValidation = require('../middlewares/createCharacterValidation');
-// const editCharacterValidation = require('../middlewares/editCharacterValidation');
+const updateCharacterValidation = require('../middlewares/updateCharacterValidation');
 const uploadCharacterImage = require('../middlewares/charactersMulter')
 
 
@@ -30,10 +31,11 @@ router.get('/charactersList', charactersController.charactersList);
 
 router.post('/deleteMovie', moviesController.deleteMovie);
 router.get('/editMovie/:id', moviesController.editMovie);
-router.post('/updateMovie', uploadMovieImage.single('moviePoster'), editMovieValidation, moviesController.updateMovie);
+router.post('/updateMovie', uploadMovieImage.single('moviePoster'), updateMovieValidation, moviesController.updateMovie);
 
 router.post('/deleteCharacter', charactersController.deleteCharacter);
 router.get('/editCharacter/:id', charactersController.editCharacter);
+router.post('/updateCharacter', uploadCharacterImage.single('characterImage'), updateCharacterValidation, charactersController.updateCharacter);
 
 
 
@@ -42,7 +44,5 @@ const apiController = require('../controllers/apiControllers/apiController');
 router.get('/api/moviesFront', apiController.moviesFront);
 router.get('/api/charactersFront', apiController.charactersFront);
 router.get('/api/genresFront', apiController.genresFront);
-
-
 
 module.exports = router;

@@ -129,5 +129,20 @@
       0
     ],
     "characterImage": "characterImage-1622833802052.jpeg"
+  },
+  {
+    "id": 10,
+    "name": "Malefica",
+    "age": 26,
+    "weight": 65,
+    "story": "",
+    "movies": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "characterImage": "characterImage-1623020905701.jpeg"
   }
 ]
