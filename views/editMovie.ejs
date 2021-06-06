@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<head>
+  <%- include('./partials/head') %>
+</head>
+
+<html>
+  <body>
+    <div class="width80center">
+      <%- include('./partials/header') %>
+    </div>
+    
+    <main>
+      <%- include('./partials/lists-buttons') %>
+      <div>
+        <% if (message) { %>
+          <h2><%= message %></h2>
+        <% } else { %>  
+          <h2>Edit movie</h2>
+        <% } %>
+      </div>
+
+      <!-- <form action="/newMovie" method="POST" autocomplete="on"> -->
+      <form action="/editMovie" method="POST" autocomplete="on" enctype="multipart/form-data" id="form">
+        <div class="">
+          <label for="Title">Title:</label><br>
+          <% if (locals.errors && errors.title) { %>
+            <div class="validator-error">
+                <%= errors.title.msg %> 
+                <br>
+            </div>
+          <% } %>
+          <input type="text" name="title" id="title" placeholder="Title" value="<%= locals.originalData ? originalData.title : movie.title %>">
+        </div>
+
+
+        <div class="">
+          <label for="Score">Score:</label><br>
+          <% if (locals.originalData && originalData.score) { %> 
+            <select name="score" id="score">
+            <% for (let i = 1; i < 6; i++) { %> 
+              <% if (originalData.score == i) { %> 
+                <option value="<%= i %>" selected><%= i %></option>
+              <% } else { %>
+                <option value="<%= i %>"><%= i %></option>
+              <% } %>
+            <% } %>
+            </select>
+          <% } else { %>
+            <select name="score" id="score">
+              <% for (let i = 1; i < 6; i++) { %> 
+                <% if (movie.score == i) { %> 
+                  <option value="<%= i %>" selected><%= i %></option>
+                <% } else { %> 
+                  <option value="<%= i %>" ><%= i %></option>
+                <% } %> 
+              <% } %>
+            </select>
+          <% } %>
+        </div>
+
+
+        <!--  -->
+        <div id="character-container" class="character-container-style">
+
+          <div class="" id="character1">
+            <label for="firstCharacter">Character #1</label><br>
+            <% if (locals.originalData && originalData.character1) { %> 
+              <select name="character1" id="character1">
+                <% for (let i = 0; i < characters.length; i++) { %> 
+                  <% if (originalData.character1 == characters[i].id) { %> 
+                    <option value="<%= characters[i].id %>" selected><%= characters[i].name %></option>
+                  <% } else { %>
+                    <option value="<%= characters[i].id %>" ><%= characters[i].name %></option>
+                  <% } %>
+                <% } %>
+              </select>
+            <% } else { %>
+              <select name="character1" id="character1">
+                <% for (let i = 0; i < characters.length; i++) { %>
+                  <% if (movie.characters[0] == i) { %>
+                    <option value="<%= characters[i].id %>" selected><%= characters[i].name %></option>
+                  <% } else { %>
+                  <option value="<%= characters[i].id %>" ><%= characters[i].name %></option>
+                  <% } %>
+                <% } %>
+              </select>
+            <% } %>
+          </div>
+
+
+
+          <div class="" id="character2">
+            <label for="secondCharacter">Character #2</label><br>
+            <% if (locals.originalData && originalData.character2) { %> 
+              <select name="character2" id="character2">
+                <% for (let i = 0; i < characters.length; i++) { %> 
+                  <% if (originalData.character2 == characters[i].id) { %> 
+                    <option value="<%= characters[i].id %>" selected><%= characters[i].name %></option>
+                  <% } else { %>
+                    <option value="<%= characters[i].id %>" ><%= characters[i].name %></option>
+                  <% } %>
+                <% } %>
+              </select>
+            <% } else { %>
+              <select name="character2" id="character2">
+                <% for (let i = 0; i < characters.length; i++) { %>
+                  <% if (movie.characters[1] == i) { %>
+                    <option value="<%= characters[i].id %>" selected><%= characters[i].name %></option>
+                  <% } else { %>
+                  <option value="<%= characters[i].id %>" ><%= characters[i].name %></option>
+                  <% } %>
+                <% } %>
+              </select>
+            <% } %>
+          </div>
+
+
+
+          <div class="" id="character3">
+            <label for="thirdCharacter">Character #3</label><br>
+            <% if (locals.originalData && originalData.character3) { %> 
+              <select name="character3" id="character3">
+                <% for (let i = 0; i < characters.length; i++) { %> 
+                  <% if (originalData.character3 == characters[i].id) { %> 
+                    <option value="<%= characters[i].id %>" selected><%= characters[i].name %></option>
+                  <% } else { %>
+                    <option value="<%= characters[i].id %>" ><%= characters[i].name %></option>
+                  <% } %>
+                <% } %>
+              </select>
+            <% } else { %>
+              <select name="character3" id="character3">
+                <% for (let i = 0; i < characters.length; i++) { %>
+                  <% if (movie.characters[2] == i) { %>
+                    <option value="<%= characters[i].id %>" selected><%= characters[i].name %></option>
+                  <% } else { %>
+                  <option value="<%= characters[i].id %>" ><%= characters[i].name %></option>
+                  <% } %>
+                <% } %>
+              </select>
+            <% } %>
+          </div>
+        </div>
+
+        
+      
+
+
+        <div class="edit-img-container">
+
+          <div class="column-1">
+
+            <div id="genre1-container" class="edit-genre-container-style">
+                      
+              <div class="" id="divGenre1">
+                <label for="genre1">Genre #1</label><br>
+                <% if (locals.originalData && originalData.genre1) { %> 
+                  <select name="genre1" id="genre1">
+                    <% for (let i = 0; i < genres.length; i++) { %> 
+                      <% if (originalData.genre1 == genres[i].id) { %> 
+                        <option value="<%= genres[i].id %>" selected><%= genres[i].name %></option>
+                      <% } else { %>
+                        <option value="<%= genres[i].id %>" ><%= genres[i].name %></option>
+                      <% } %>
+                    <% } %>
+                  </select>
+                <% } else { %>
+                  <select name="genre1" id="genre1">
+                    <% for (let i = 0; i < genres.length; i++) { %>
+                      <% if (movie.genres[0] == genres[i].id) { %> 
+                        <option value="<%= genres[i].id %>" selected><%= genres[i].name %></option>
+                      <% } else { %>
+                        <option value="<%= genres[i].id %>"><%= genres[i].name %></option>
+                      <% } %>
+                    <% } %>
+                  </select>
+                <% } %>
+              </div>
+    
+    
+              <div class="" id="divGenre2">
+                <label for="genre2">Genre #2</label><br>
+                <% if (locals.originalData && originalData.genre2) { %> 
+                  <select name="genre2" id="genre2">
+                    <% for (let i = 0; i < genres.length; i++) { %> 
+                      <% if (originalData.genre2 == genres[i].id) { %> 
+                        <option value="<%= genres[i].id %>" selected><%= genres[i].name %></option>
+                      <% } else { %>
+                        <option value="<%= genres[i].id %>" ><%= genres[i].name %></option>
+                      <% } %>
+                    <% } %>
+                  </select>
+                <% } else { %>
+                  <select name="genre2" id="genre2">
+                    <% for (let i = 0; i < genres.length; i++) { %>
+                      <% if (movie.genres[1] == genres[i].id) { %> 
+                        <option value="<%= genres[i].id %>" selected><%= genres[i].name %></option>
+                      <% } else { %>
+                        <option value="<%= genres[i].id %>"><%= genres[i].name %></option>
+                      <% } %>
+                    <% } %>
+                  </select>
+                <% } %>
+              </div>
+    
+    
+              <div class="" id="divGenre3">
+                <label for="genre3">Genre #3</label><br>
+                <% if (locals.originalData && originalData.genre3) { %> 
+                  <select name="genre3" id="genre3">
+                    <% for (let i = 0; i < genres.length; i++) { %> 
+                      <% if (originalData.genre3 == genres[i].id) { %> 
+                        <option value="<%= genres[i].id %>" selected><%= genres[i].name %></option>
+                      <% } else { %>
+                        <option value="<%= genres[i].id %>" ><%= genres[i].name %></option>
+                      <% } %>
+                    <% } %>
+                  </select>
+                <% } else { %>
+                  <select name="genre3" id="genre3">
+                    <% for (let i = 0; i < genres.length; i++) { %>
+                      <% if (movie.genres[2] == genres[i].id) { %> 
+                        <option value="<%= genres[i].id %>" selected><%= genres[i].name %></option>
+                      <% } else { %>
+                        <option value="<%= genres[i].id %>"><%= genres[i].name %></option>
+                      <% } %>
+                    <% } %>
+                  </select>
+                <% } %>
+              </div>
+              
+            </div>
+            
+
+
+
+
+
+
+            <div>
+              <% if (locals.errors && errors.release) { %>
+                <div class="validator-error">
+                    <%= errors.release.msg %> 
+                </div>
+              <% } %>
+              <label for="release">Release Date:</label><br>
+              <input type="date" name="release" id="release" value="<%= locals.originalData ? originalData.release : movie.release %>">
+            </div>
+
+          </div>
+        
+          <div class="column-2">
+            <div class="movie-image">
+              <img src="/images/movies/<%= movie.moviePoster %>" alt="<%= movie.title %>">
+            </div>
+
+            <div class="">
+              <label>You can change de movie´s poster</label><br>
+              <% if (locals.errors && errors.moviePoster) { %>
+                <div class="validator-error">
+                  <%= errors.moviePoster.msg %>
+                </div>
+              <% } else if (locals.errors){ %>
+                <div class="validator-error">
+                  Please, upload the poster again.
+                </div>
+              <% } %>
+              <input type="file" name="moviePoster" id="file">
+              
+            </div>
+          
+          </div>
+            
+        </div>      
+
+        <br>
+
+
+        <div class="">
+          <input type="submit" value="Edit movie">
+        </div>
+        
+        <br>
+      
+      </form>
+        
+      
+      
+      
+      <div class="width80center">
+        <%- include('./partials/create-buttons') %>
+        <%- include('./partials/foot-footnote') %>
+      </div>
+      <br>
+    </main>
+    <!-- <script src="/javascripts/createMovie.js"></script> -->
+  </body>
+</html>

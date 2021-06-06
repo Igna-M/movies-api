@@ -63,8 +63,10 @@ const charactersController = {
         let charactersMovies = []
 
         for (let i = 0; i < roughMovies.length ; i++){
-            if (roughMovies[i] != 0 && roughMovies[i] != 'null' && roughMovies[i] != 'new'){
-                charactersMovies.push(Number(roughMovies[i]))   
+            if (roughMovies[i] != 'null' && roughMovies[i] != 'new'){
+                charactersMovies.push(Number(roughMovies[i]))
+            } else {
+                charactersMovies.push(Number(0))
             }
         }
         
@@ -159,7 +161,21 @@ const charactersController = {
 
 
     editCharacter: function(req, res) {
-        return res.send('editCharacter')
+
+        let character = Characters.findByPk(req.params.id)
+        let message = 'Edit character'
+
+        let movies = Movies.findAll()
+        // let characters = Characters.findAll()
+        // let genres = Genres.findAll()
+
+        let view = {
+            character: character,
+            movies: movies,
+            message: message
+        }
+
+        return res.render('editCharacter', view)
     },
 
 }

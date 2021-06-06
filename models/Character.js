@@ -11,8 +11,7 @@ const Character = {
 	},
 
 	findByPk: function (id) {
-		let allCharacters = this.findAll();
-		let characterFound = allCharacters.find(oneCharacter => oneCharacter.id === id);
+		let characterFound = this.findAll().find(oneCharacter => oneCharacter.id == id);
 		return characterFound;
 	},
 
@@ -52,7 +51,6 @@ const Character = {
 		let uploadCharacters = JSON.stringify(array, null , 2);
 		fs.writeFileSync(dbCharactersPath, uploadCharacters)	
 	}
-
 
 }
 

@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "title": "Hercules",
+    "title": "None",
     "score": 5,
     "characters": [
       9,
@@ -10,7 +10,8 @@
     ],
     "genres": [
       1,
-      10
+      10,
+      0
     ],
     "release": "1978-05-05",
     "moviePoster": "moviePoster-1622832288460.jpg"
@@ -26,7 +27,8 @@
     ],
     "genres": [
       3,
-      10
+      10,
+      0
     ],
     "release": "1979-05-05",
     "moviePoster": "moviePoster-1622832288460.jpg"
@@ -38,12 +40,12 @@
     "characters": [
       6,
       8,
-      2,
-      9
+      2
     ],
     "genres": [
       4,
-      10
+      10,
+      0
     ],
     "release": "1970-05-05",
     "moviePoster": "moviePoster-1622832288460.jpg"
@@ -55,12 +57,12 @@
     "characters": [
       5,
       8,
-      2,
-      9
+      2
     ],
     "genres": [
       5,
-      10
+      10,
+      0
     ],
     "release": "1971-05-05",
     "moviePoster": "moviePoster-1622832288460.jpg"
@@ -72,12 +74,12 @@
     "characters": [
       6,
       8,
-      2,
-      9
+      2
     ],
     "genres": [
       6,
-      10
+      10,
+      0
     ],
     "release": "1972-05-05",
     "moviePoster": "moviePoster-1622832288460.jpg"
@@ -93,7 +95,8 @@
     ],
     "genres": [
       7,
-      10
+      10,
+      0
     ],
     "release": "1973-05-05",
     "moviePoster": "moviePoster-1622832288460.jpg"
@@ -104,11 +107,13 @@
     "score": 5,
     "characters": [
       6,
-      8
+      8,
+      0
     ],
     "genres": [
       8,
-      10
+      10,
+      0
     ],
     "release": "1974-05-05",
     "moviePoster": "moviePoster-1622832288460.jpg"
@@ -124,7 +129,8 @@
     ],
     "genres": [
       9,
-      10
+      10,
+      0
     ],
     "release": "1975-05-05",
     "moviePoster": "moviePoster-1622832288460.jpg"
@@ -135,11 +141,13 @@
     "score": 5,
     "characters": [
       6,
-      8
+      8,
+      0
     ],
     "genres": [
       2,
-      10
+      10,
+      0
     ],
     "release": "1976-05-05",
     "moviePoster": "moviePoster-1622832288460.jpg"
@@ -150,11 +158,13 @@
     "score": 5,
     "characters": [
       5,
-      8
+      8,
+      0
     ],
     "genres": [
       2,
-      10
+      10,
+      0
     ],
     "release": "1977-05-05",
     "moviePoster": "moviePoster-1622832288460.jpg"
@@ -165,7 +175,8 @@
     "score": "4",
     "characters": [
       6,
-      4
+      4,
+      0
     ],
     "genres": [
       3,
@@ -193,10 +204,14 @@
     "title": "Fantasia",
     "score": 5,
     "characters": [
-      5
+      5,
+      0,
+      0
     ],
     "genres": [
-      3
+      3,
+      0,
+      0
     ],
     "release": "1965-11-11",
     "moviePoster": "moviePoster-1622828131890.jpeg"
@@ -212,7 +227,8 @@
     ],
     "genres": [
       2,
-      10
+      10,
+      0
     ],
     "release": "1977-05-05",
     "moviePoster": "moviePoster-1622832288460.jpg"

@@ -14,6 +14,7 @@ const dbMoviesPath = path.resolve(__dirname, '../data/movies.json');
 const Movies = require('../models/Movie');
 const Characters = require('../models/Character');
 const Genres = require('../models/Genre');
+const Movie = require('../models/Movie');
 
 // const fetch = require("node-fetch");
 
@@ -74,8 +75,10 @@ const moviesController = {
         let charactersLis = [req.body.character1, req.body.character2, req.body.character3];
         let selectedCharacters = []
         for (let i = 0; i < charactersLis.length; i++){
-            if (charactersLis[i] != '0' && charactersLis[i] != 'new'){
+            if (charactersLis[i] != 'new'){
                 selectedCharacters.push(Number(charactersLis[i]));
+            } else {
+                selectedCharacters.push(Number(0)); // Agregado para tener el array completo
             }
         }
         
@@ -90,7 +93,9 @@ const moviesController = {
             } else if (optionsGenres[i] == 'new' && newGenres[i] != 'null'){
                 newGenreID = Genres.create(newGenres[i])
                 selectedGenres.push(newGenreID);
-            } 
+            } else {
+                selectedGenres.push(Number(0)); // Agregado para tener el array completo
+            }
         }
 
         let newMovie = {
@@ -179,7 +184,24 @@ const moviesController = {
 
 
     editMovie: function(req, res) {
-        return res.send('editMovie')
+        let movie = Movie.findByPk(req.params.id)
+
+        let message = 'Edit movie'
+
+        // let movies = Movies.findAll()
+        let characters = Characters.findAll()
+        let genres = Genres.findAll()
+
+
+        let view = {
+            movie: movie,
+            message: message,
+            genres: genres,
+            characters: characters
+        }
+
+
+        return res.render('editMovie', view)
     },
 
 }
