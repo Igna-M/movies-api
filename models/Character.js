@@ -41,6 +41,13 @@ const Character = {
 		}	
 	},
 
+
+	deleteImage: function (image) {
+		let imagePath = path.resolve(__dirname,'../public/images/characters/' + image);
+		fs.unlinkSync(imagePath);
+	},
+
+
 	updateDB: function (array) {
 		let uploadCharacters = JSON.stringify(array, null , 2);
 		fs.writeFileSync(dbCharactersPath, uploadCharacters)	

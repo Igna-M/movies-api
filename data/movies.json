@@ -4,6 +4,7 @@
     "title": "Hercules",
     "score": 5,
     "characters": [
+      9,
       6,
       8
     ],
@@ -20,7 +21,8 @@
     "score": 5,
     "characters": [
       2,
-      8
+      8,
+      9
     ],
     "genres": [
       3,
@@ -36,7 +38,8 @@
     "characters": [
       6,
       8,
-      2
+      2,
+      9
     ],
     "genres": [
       4,
@@ -52,13 +55,31 @@
     "characters": [
       5,
       8,
-      2
+      2,
+      9
     ],
     "genres": [
       5,
       10
     ],
     "release": "1971-05-05",
+    "moviePoster": "moviePoster-1622832288460.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Otra pelicula",
+    "score": 5,
+    "characters": [
+      6,
+      8,
+      2,
+      9
+    ],
+    "genres": [
+      6,
+      10
+    ],
+    "release": "1972-05-05",
     "moviePoster": "moviePoster-1622832288460.jpg"
   },
   {
@@ -98,7 +119,8 @@
     "score": 5,
     "characters": [
       6,
-      8
+      8,
+      9
     ],
     "genres": [
       9,
@@ -184,6 +206,7 @@
     "title": "Star Wars",
     "score": 5,
     "characters": [
+      9,
       6,
       8
     ],

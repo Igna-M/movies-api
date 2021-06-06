@@ -12,6 +12,7 @@ const { validationResult } = require('express-validator');
 const Movies = require('../models/Movie');
 const Characters = require('../models/Character');
 const Genres = require('../models/Genre');
+const Character = require('../models/Character');
 
 // const fetch = require("node-fetch");
 
@@ -102,12 +103,63 @@ const charactersController = {
         return res.render('charactersList', view)
     },
 
-    editCharacter: function(req, res) {
-        return res.send('editCharacter')
-    },
 
     deleteCharacter: function(req, res) {
-        return res.send('deleteCharacter', req.body)
+
+        let deleteID = req.body.delete;
+        let characterToDelete = Character.findByPk(deleteID)
+        let newList = Character.findAll().filter(character => character.id != deleteID);
+
+        // Delete characters appearence on movies.
+        let moviesInCharacter = Movies.findAll().filter(movie => movie.characters.some((character) => character == deleteID));
+
+        // change in characters with deleted movie
+        for (let i = 0; i < moviesInCharacter.length; i++){
+            charactersNow = moviesInCharacter[i].characters.filter((movie) => movie != deleteID)
+            moviesInCharacter[i].characters = charactersNow
+        }
+
+        // Modify complete list, replacin characters
+        let movies = Movies.findAll()
+
+        for (let i = 0; i < moviesInCharacter.length; i++){
+            // console.log('-----------------------------');
+            // console.log('');
+            // console.log('Nueva vuelta de i;', i);
+            // console.log(moviesInCharacter[i]);
+            // console.log('');
+            movies = movies.map(function(movie){
+                if (movie.id == moviesInCharacter[i].id){
+                    // console.log("Pre", movie);
+                    movie = moviesInCharacter[i]
+                    // console.log("Pos", movie);
+                };
+                // console.log("All:", movie);
+                return movie
+            })
+        }
+
+        Movies.updateDB(movies)
+        Characters.updateDB(newList)
+        
+        // let view = {
+        //     movies: movies,
+        //     newList: newList
+        // }
+
+        // Delete moviePoster
+        if (movieToDelete.moviePoster){
+            Character.deleteImage(characterToDelete.characterImage)
+        }
+        
+        // return res.send(view)
+        return res.redirect('/charactersList')
+
+    },
+
+
+    editCharacter: function(req, res) {
+        return res.send('editCharacter')
     },
 
 }

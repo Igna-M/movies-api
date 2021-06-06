@@ -127,9 +127,6 @@ const moviesController = {
         return res.render('moviesList', view);
     },
 
-    editMovie: function(req, res) {
-        return res.send('editMovie')
-    },
 
     deleteMovie: function(req, res) {
 
@@ -145,12 +142,11 @@ const moviesController = {
             charactersInMovie[i].movies = moviesNow
         }
 
-        // Modify movies un characters
+        // Modify movies in characters
         let characters = Characters.findAll()
-        let newCharList
 
         for (let i = 0; i < charactersInMovie.length; i++){
-            newCharList = characters.map(function(character){
+            characters = characters.map(function(character){
                 if (character.id == charactersInMovie[i].id){
                     character = charactersInMovie[i]
                 }
@@ -158,7 +154,7 @@ const moviesController = {
             })
         }
 
-        Characters.updateDB(newCharList)
+        Characters.updateDB(characters)
         Movies.updateDB(newList)
 
         // Delete moviePoster
@@ -167,6 +163,23 @@ const moviesController = {
         }
 
         return res.redirect('/moviesList')
+
+
+        // console.log(newCharList);
+        // console.log(newList);
+        
+        // let view = {
+        //     characters: characters,
+        //     newCharList: newCharList,
+        //     newList: newList
+        // }
+        
+        // return res.send(view)
+    },
+
+
+    editMovie: function(req, res) {
+        return res.send('editMovie')
     },
 
 }
