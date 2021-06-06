@@ -48,7 +48,19 @@ const Movie = {
 	updateDB: function (array) {
 		let uploadMovies = JSON.stringify(array, null , 2);
 			fs.writeFileSync(dbMoviesPath, uploadMovies)
-	}
+	},
+
+	replace: function (updatedMovie) {
+		let movies = this.findAll()
+		let newMoviesDB = movies.map(function(movie){
+
+            if (movie.id == updatedMovie.id){
+                movie = updatedMovie
+            }
+            return movie
+        })
+		this.updateDB(newMoviesDB)
+	},
 
 }
 

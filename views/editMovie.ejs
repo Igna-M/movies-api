@@ -19,8 +19,10 @@
         <% } %>
       </div>
 
-      <!-- <form action="/newMovie" method="POST" autocomplete="on"> -->
-      <form action="/editMovie" method="POST" autocomplete="on" enctype="multipart/form-data" id="form">
+      <form action="/updateMovie" method="POST" autocomplete="on" enctype="multipart/form-data" id="form">
+        
+        <input type="hidden" name="id" value="<%= movie.id %>">
+
         <div class="">
           <label for="Title">Title:</label><br>
           <% if (locals.errors && errors.title) { %>
@@ -77,7 +79,7 @@
             <% } else { %>
               <select name="character1" id="character1">
                 <% for (let i = 0; i < characters.length; i++) { %>
-                  <% if (movie.characters[0] == i) { %>
+                  <% if (movie.characters[0] == characters[i].id) { %>
                     <option value="<%= characters[i].id %>" selected><%= characters[i].name %></option>
                   <% } else { %>
                   <option value="<%= characters[i].id %>" ><%= characters[i].name %></option>
@@ -104,7 +106,7 @@
             <% } else { %>
               <select name="character2" id="character2">
                 <% for (let i = 0; i < characters.length; i++) { %>
-                  <% if (movie.characters[1] == i) { %>
+                  <% if (movie.characters[1] == characters[i].id) { %>
                     <option value="<%= characters[i].id %>" selected><%= characters[i].name %></option>
                   <% } else { %>
                   <option value="<%= characters[i].id %>" ><%= characters[i].name %></option>
@@ -131,7 +133,7 @@
             <% } else { %>
               <select name="character3" id="character3">
                 <% for (let i = 0; i < characters.length; i++) { %>
-                  <% if (movie.characters[2] == i) { %>
+                  <% if (movie.characters[2] == characters[i].id) { %>
                     <option value="<%= characters[i].id %>" selected><%= characters[i].name %></option>
                   <% } else { %>
                   <option value="<%= characters[i].id %>" ><%= characters[i].name %></option>
@@ -259,10 +261,6 @@
               <% if (locals.errors && errors.moviePoster) { %>
                 <div class="validator-error">
                   <%= errors.moviePoster.msg %>
-                </div>
-              <% } else if (locals.errors){ %>
-                <div class="validator-error">
-                  Please, upload the poster again.
                 </div>
               <% } %>
               <input type="file" name="moviePoster" id="file">

@@ -455,7 +455,6 @@ input[type=file]:hover{
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
-  border: yellow 1px solid;
 }
 
 
@@ -467,7 +466,6 @@ input[type=file]:hover{
   justify-content: space-between;
   align-items: stretch;
   align-content: space-evenly;
-  border: yellowgreen 1px solid;
 }
 
 
@@ -489,7 +487,6 @@ input[type=file]:hover{
   justify-content: space-between;
   align-items: stretch;
   align-content: space-evenly;
-  border: red 1px solid;
 }
 
 

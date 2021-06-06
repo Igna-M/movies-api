@@ -169,17 +169,6 @@ const moviesController = {
 
         return res.redirect('/moviesList')
 
-
-        // console.log(newCharList);
-        // console.log(newList);
-        
-        // let view = {
-        //     characters: characters,
-        //     newCharList: newCharList,
-        //     newList: newList
-        // }
-        
-        // return res.send(view)
     },
 
 
@@ -200,9 +189,57 @@ const moviesController = {
             characters: characters
         }
 
-
         return res.render('editMovie', view)
     },
+
+    updateMovie: function(req,res) {
+
+        let movie = Movie.findByPk(req.body.id)
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            if (req.file){
+                Movies.deleteImage(req.file.filename)
+            }
+
+            let message = 'Sorry, something went wrong. Please, try again.'
+
+            let characters = Characters.findAll()
+            let genres = Genres.findAll()
+
+            let view = {
+                movie: movie,
+                message: message,
+                genres: genres,
+                characters: characters,
+                errors: errors.mapped(),
+                originalData: req.body
+            }
+            return res.render('editMovie', view);
+        }
+
+        let charactersLis = [Number(req.body.character1), Number(req.body.character2), Number(req.body.character3)];
+        let genresList = [Number(req.body.genre1), Number(req.body.genre2), Number(req.body.genre3)];
+
+        let imageInEditedMovie = movie.moviePoster
+        if (req.file){
+            imageInEditedMovie = req.file.filename
+            Movies.deleteImage(movie.moviePoster)
+        } 
+
+
+        let updatedMovie = {
+            id: Number(req.body.id),
+            title: req.body.title,
+            score: Number(req.body.score),
+            characters: charactersLis,
+            genres: genresList,
+            release: req.body.release,            
+            moviePoster: imageInEditedMovie
+        }
+        Movies.replace(updatedMovie)
+        return res.redirect('moviesList')
+    }
 
 }
 

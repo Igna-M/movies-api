@@ -26,18 +26,14 @@ module.exports = [
         .isAscii().withMessage('The new genre name must be alphanumeric'),
 	body('release').isDate().withMessage('Please enter a valid date'),
 	body('moviePoster').custom((value, { req }) => {
-		let file = req.file;
-		let acceptedExtensions = ['.jpg', ".jpeg", '.png', '.gif'];	
-
-		if (!file) {
-			throw new Error('Please, add the poster of this movie');
-		} else {
-			let fileExtension = path.extname(file.originalname);
-			if (!acceptedExtensions.includes(fileExtension)) {
-				throw new Error(`Accepted extensions: ${acceptedExtensions.join(', ')}`);
-			}
-		}
-
+        if (req.file) {
+            let file = req.file;
+            let acceptedExtensions = ['.jpg', ".jpeg", '.png', '.gif'];	
+            let fileExtension = path.extname(file.originalname);
+            if (!acceptedExtensions.includes(fileExtension)) {
+                throw new Error(`Accepted extensions: ${acceptedExtensions.join(', ')}`);
+            }
+        }
 		return true;
 	})
 ]

@@ -29,7 +29,7 @@ module.exports = [
 		} else {
 			let fileExtension = path.extname(file.originalname);
 			if (!acceptedExtensions.includes(fileExtension)) {
-				throw new Error(`Accepted extensiones: ${acceptedExtensions.join(', ')}`);
+				throw new Error(`Accepted extensions: ${acceptedExtensions.join(', ')}`);
 			}
 		}
 

@@ -69,8 +69,8 @@
   },
   {
     "id": 4,
-    "title": "Otra pelicula",
-    "score": 5,
+    "title": "Mad Max",
+    "score": 4,
     "characters": [
       6,
       8,
@@ -81,8 +81,8 @@
       10,
       0
     ],
-    "release": "1972-05-05",
-    "moviePoster": "moviePoster-1622832288460.jpg"
+    "release": "1979-05-05",
+    "moviePoster": "moviePoster-1623015234463.jpeg"
   },
   {
     "id": 5,
