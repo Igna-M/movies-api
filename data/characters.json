@@ -17,28 +17,29 @@
     "weight": 61,
     "story": "Leia",
     "movies": [
+      3,
+      2,
       7,
       9,
       5,
-      6,
-      0
+      6
     ],
     "characterImage": "characterImage-1622830411212.jpeg"
   },
   {
     "id": 2,
     "name": "Aladdin",
-    "age": 99,
-    "weight": 200,
-    "story": "Leia",
+    "age": 16,
+    "weight": 72,
+    "story": "He used to live in the desert",
     "movies": [
-      1,
-      2,
-      3,
       4,
-      5
+      0,
+      0,
+      0,
+      0
     ],
-    "characterImage": "characterImage-1622830411212.jpeg"
+    "characterImage": "characterImage-1623080358620.png"
   },
   {
     "id": 4,
@@ -58,43 +59,43 @@
   {
     "id": 5,
     "name": "Mickey Mouse",
-    "age": 20,
+    "age": 42,
     "weight": 60,
-    "story": "Leia",
+    "story": "A star among stars",
     "movies": [
-      7,
-      8,
-      9,
-      1,
+      2,
+      3,
+      0,
+      0,
       0
     ],
-    "characterImage": "characterImage-1622830411212.jpeg"
+    "characterImage": "characterImage-1623080566608.jpeg"
   },
   {
     "id": 6,
     "name": "Leia",
     "age": 20,
     "weight": 60,
-    "story": "Leia",
+    "story": "Princess of the universe",
     "movies": [
-      1,
-      2,
-      3,
+      13,
+      0,
+      0,
       0,
       0
     ],
-    "characterImage": "characterImage-1622830411212.jpeg"
+    "characterImage": "characterImage-1623080630474.jpeg"
   },
   {
     "id": 7,
     "name": "BB-8",
     "age": 6,
     "weight": 66,
-    "story": "un robotito. 6. 66ks.",
+    "story": "A little robot, over a small ball.",
     "movies": [
-      4,
-      5,
-      6,
+      13,
+      0,
+      0,
       0,
       0
     ],
@@ -132,10 +133,10 @@
   },
   {
     "id": 10,
-    "name": "Malefica",
-    "age": 26,
-    "weight": 65,
-    "story": "",
+    "name": "Maleficent",
+    "age": 34,
+    "weight": 61,
+    "story": "She is a bad, very bad girl",
     "movies": [
       1,
       0,
@@ -144,5 +145,65 @@
       0
     ],
     "characterImage": "characterImage-1623020905701.jpeg"
+  },
+  {
+    "id": 11,
+    "name": "Thor",
+    "age": 28,
+    "weight": 85,
+    "story": "The story of young Thor",
+    "movies": [
+      14,
+      0,
+      0,
+      0,
+      0
+    ],
+    "characterImage": "characterImage-1623077979573.jpeg"
+  },
+  {
+    "id": 12,
+    "name": "Captain America",
+    "age": 29,
+    "weight": 82,
+    "story": "The captain of a nation",
+    "movies": [
+      14,
+      0,
+      0,
+      0,
+      0
+    ],
+    "characterImage": "characterImage-1623079077893.jpeg"
+  },
+  {
+    "id": 13,
+    "name": "Black Widow",
+    "age": 26,
+    "weight": 65,
+    "story": "",
+    "movies": [
+      14,
+      0,
+      0,
+      0,
+      0
+    ],
+    "characterImage": "characterImage-1623079126807.jpeg"
+  },
+  {
+    "id": 14,
+    "name": "Donald Duck",
+    "age": 36,
+    "weight": 56,
+    "story": "One of the most important characters",
+    "movies": [
+      3,
+      2,
+      0,
+      0,
+      0
+    ],
+    "characterImage": "characterImage-1623079887288.jpeg"
   }
 ]

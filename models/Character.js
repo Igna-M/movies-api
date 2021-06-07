@@ -81,11 +81,8 @@ const Character = {
 	},
 
 
+	// update movies array when modified from character
 	movieUpdated: function (movieID, dbArray, newArray) {
-		console.log(movieID);
-		console.log(dbArray);
-        console.log(newArray);
-
 		let characters = this.findAll()
 
 		// All characters to be modified
@@ -101,7 +98,7 @@ const Character = {
 					let newMovies = character.movies.filter(function(movie){
 						return movie != 0 && movie != movieID
 					})
-					// Modiffy the movies arrays in characters
+					// Modify the movies array in characters
 					character.movies = newMovies
 					charactersToUpdate.push(character)
 
@@ -122,7 +119,6 @@ const Character = {
 		
 		// Update DB with modified characters array
 		this.updateArray(charactersToUpdate)
-
 	},
 
 

@@ -199,6 +199,9 @@ const charactersController = {
 
         let newMovies = [Number(req.body.movie1), Number(req.body.movie2),Number(req.body.movie3),Number(req.body.movie4),Number(req.body.movie5)]
         
+        // Modify characters arrays in movies
+        Movie.characterUpdated(character.id, character.movies, newMovies);
+
         let imageInEditedCharacter = character.characterImage
         if (req.file){
             imageInEditedCharacter = req.file.filename

@@ -113,9 +113,10 @@
               <br>
             </div>
           <% } %>
-          <textarea rows="4" class="double-height" type="text" name="story" id="story" placeholder="character´s story" value="<%= locals.originalData ? originalData.story : character.story %>"></textarea>
+          <!-- <textarea rows="2" class="double-height" type="text" name="story" id="story" placeholder="<%= locals.originalData ? originalData.story : character.story %>" value="<%= locals.originalData ? originalData.story : character.story %>"></textarea> -->
+          <input rows="2" class="double-height" type="text" name="story" id="story" value="<%= locals.originalData ? originalData.story : character.story %>"></input>
         </div>
-
+        <!-- A little robot, over a small ball. -->
 
 
         <div class="edit-img-container">

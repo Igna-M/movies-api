@@ -18,11 +18,11 @@
   },
   {
     "id": 1,
-    "title": "Malefica",
-    "score": 3,
+    "title": "Maleficent",
+    "score": 4,
     "characters": [
       10,
-      6,
+      0,
       0
     ],
     "genres": [
@@ -30,59 +30,59 @@
       5,
       0
     ],
-    "release": "2015-05-05",
+    "release": "2014-05-05",
     "moviePoster": "moviePoster-1623021120150.jpeg"
   },
   {
     "id": 2,
     "title": "Fantasia",
-    "score": 3,
-    "characters": [
-      6,
-      8,
-      2
-    ],
-    "genres": [
-      4,
-      10,
-      0
-    ],
-    "release": "1970-05-05",
-    "moviePoster": "moviePoster-1622832288460.jpg"
-  },
-  {
-    "id": 3,
-    "title": "Fantasia II",
     "score": 5,
     "characters": [
       5,
-      8,
-      2
+      1,
+      14
+    ],
+    "genres": [
+      15,
+      0,
+      0
+    ],
+    "release": "1940-05-05",
+    "moviePoster": "moviePoster-1623079664455.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Fantasia 2000",
+    "score": 5,
+    "characters": [
+      5,
+      14,
+      1
     ],
     "genres": [
       5,
-      10,
+      15,
       0
     ],
-    "release": "1971-05-05",
-    "moviePoster": "moviePoster-1622832288460.jpg"
+    "release": "1999-05-05",
+    "moviePoster": "moviePoster-1623080082952.jpg"
   },
   {
     "id": 4,
-    "title": "Mad Max",
-    "score": 4,
+    "title": "Aladdin",
+    "score": 3,
     "characters": [
-      6,
-      8,
-      2
+      2,
+      0,
+      0
     ],
     "genres": [
       6,
-      10,
-      0
+      1,
+      5
     ],
-    "release": "1979-05-05",
-    "moviePoster": "moviePoster-1623015234463.jpeg"
+    "release": "1992-05-05",
+    "moviePoster": "moviePoster-1623080293302.jpg"
   },
   {
     "id": 5,
@@ -91,7 +91,7 @@
     "characters": [
       6,
       8,
-      2
+      0
     ],
     "genres": [
       7,
@@ -157,8 +157,8 @@
     "title": "Fantasia IV",
     "score": 5,
     "characters": [
-      5,
       8,
+      0,
       0
     ],
     "genres": [
@@ -221,8 +221,9 @@
     "title": "Star Wars",
     "score": 5,
     "characters": [
-      9,
+      7,
       6,
+      9,
       8
     ],
     "genres": [
@@ -232,5 +233,22 @@
     ],
     "release": "1977-05-05",
     "moviePoster": "moviePoster-1622832288460.jpg"
+  },
+  {
+    "id": 14,
+    "title": "Avengers: Endgame",
+    "score": 3,
+    "characters": [
+      13,
+      11,
+      0
+    ],
+    "genres": [
+      1,
+      10,
+      0
+    ],
+    "release": "2019-04-01",
+    "moviePoster": "moviePoster-1623077710052.jpg"
   }
 ]
