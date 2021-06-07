@@ -15,6 +15,7 @@ const Movies = require('../models/Movie');
 const Characters = require('../models/Character');
 const Genres = require('../models/Genre');
 const Movie = require('../models/Movie');
+const Character = require('../models/Character');
 
 // const fetch = require("node-fetch");
 
@@ -147,19 +148,8 @@ const moviesController = {
             charactersInMovie[i].movies = moviesNow
         }
 
-        // Modify movies in characters
-        let characters = Characters.findAll()
-
-        for (let i = 0; i < charactersInMovie.length; i++){
-            characters = characters.map(function(character){
-                if (character.id == charactersInMovie[i].id){
-                    character = charactersInMovie[i]
-                }
-                return character
-            })
-        }
-
-        Characters.updateDB(characters)
+        // Modify movies arrays in characters
+        Character.updateArray(charactersInMovie)
         Movies.updateDB(newList)
 
         // Delete moviePoster
@@ -177,7 +167,6 @@ const moviesController = {
 
         let message = 'Edit movie'
 
-        // let movies = Movies.findAll()
         let characters = Characters.findAll()
         let genres = Genres.findAll()
 
@@ -218,25 +207,28 @@ const moviesController = {
             return res.render('editMovie', view);
         }
 
-        let charactersLis = [Number(req.body.character1), Number(req.body.character2), Number(req.body.character3)];
+        let charactersList = [Number(req.body.character1), Number(req.body.character2), Number(req.body.character3)];
         let genresList = [Number(req.body.genre1), Number(req.body.genre2), Number(req.body.genre3)];
 
+        // Modify movies arrays in characters
+        Character.movieUpdated(movie.id, movie.characters, charactersList);
+        
         let imageInEditedMovie = movie.moviePoster
         if (req.file){
             imageInEditedMovie = req.file.filename
             Movies.deleteImage(movie.moviePoster)
         } 
 
-
         let updatedMovie = {
             id: Number(req.body.id),
             title: req.body.title,
             score: Number(req.body.score),
-            characters: charactersLis,
+            characters: charactersList,
             genres: genresList,
             release: req.body.release,            
             moviePoster: imageInEditedMovie
         }
+
         Movies.replace(updatedMovie)
         return res.redirect('moviesList')
     }

@@ -53,6 +53,21 @@ const Character = {
 	},
 
 
+	updateArray: function(array){
+		let allCharacters = this.findAll();
+
+        for (let i = 0; i < array.length; i++){
+            allCharacters = allCharacters.map(function(character){
+                if (character.id == array[i].id){
+                    character = array[i]
+                }
+                return character
+            })
+        }
+		this.updateDB(allCharacters)
+	},
+
+
 	replace: function (updatedCharacter) {
 		let characcters = this.findAll()
 		let newCharacterDB = characcters.map(function(character){
@@ -63,6 +78,51 @@ const Character = {
             return character
         })
 		this.updateDB(newCharacterDB)
+	},
+
+
+	movieUpdated: function (movieID, dbArray, newArray) {
+		console.log(movieID);
+		console.log(dbArray);
+        console.log(newArray);
+
+		let characters = this.findAll()
+
+		// All characters to be modified
+		let superArray = dbArray.concat(newArray.filter(movie => !dbArray.includes(movie)));
+		superArray = superArray.filter(movie => movie != 0);
+		let charactersToUpdate = []
+		
+		for (let i = 0; i < superArray.length; i++) {
+			characters.forEach(function(character){
+				// find characters, excluding none
+				if (character.id != 0 && character.id == superArray[i]){
+					// remove the movie from characters (and none)
+					let newMovies = character.movies.filter(function(movie){
+						return movie != 0 && movie != movieID
+					})
+					// Modiffy the movies arrays in characters
+					character.movies = newMovies
+					charactersToUpdate.push(character)
+
+					// Add movie only to updated
+					if (newArray.includes(character.id)){
+						character.movies.unshift(movieID);
+					}
+
+					// fill with none
+					if (character.movies.length < 5) {
+						do {
+							character.movies.push(Number(0));
+						} while (character.movies.length < 5);
+					}					
+				}
+			})
+		}
+		
+		// Update DB with modified characters array
+		this.updateArray(charactersToUpdate)
+
 	},
 
 

@@ -62,6 +62,8 @@ const Movie = {
 		this.updateDB(newMoviesDB)
 	},
 
+
+
 }
 
 module.exports = Movie;

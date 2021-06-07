@@ -122,7 +122,7 @@ const charactersController = {
             moviesInCharacter[i].characters = charactersNow
         }
 
-        // Modify complete list, replacin characters
+        // Modify complete list, replacing characters
         let movies = Movies.findAll()
 
         for (let i = 0; i < moviesInCharacter.length; i++){
