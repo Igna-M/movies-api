@@ -3,9 +3,17 @@
         <h1>Movies´ Api</h1>
     </a>
     <div class="main-button-container">
-        <a class="main-type-button" href="/auth/login">Login</a>
-        <a class="main-type-button" href="/auth/register">Register</a>       
+        <% if (locals.userLogged) { %>
+            <a class="main-type-button" href="/createMovie">Create Movie</a>
+            <a class="main-type-button" href="/createCharacter">Create character</a>
+            <a class="main-type-button" href="/users/logout">Logaut</a>       
+        <% } else { %>
+            <a class="main-type-button" href="/users/login">Login</a>
+        <% } %>  
     </div>
+
+    
+    
     <hr>
     <br>
 </header>

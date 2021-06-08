@@ -1,0 +1,13 @@
+[
+  {
+    "id": 0,
+    "email": "admin@movies.com",
+    "password": "admin@movies.com"
+  },
+  {
+    "id": 1,
+    "email": "rsd2@movies.com",
+    "password": "rsd2@movies.com"
+  }
+  
+]

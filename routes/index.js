@@ -18,7 +18,7 @@ const charactersController = require('../controllers/charactersController');
 
 
 router.get('/', mainController.index);
-router.get('/login', mainController.login);
+// router.get('/login', mainController.login);
 router.get('/createMovie', moviesController.createMovie);
 router.post('/newMovie', uploadMovieImage.single('moviePoster'), createMovieValidation, moviesController.newMovie);
 router.get('/createCharacter', charactersController.createCharacter);

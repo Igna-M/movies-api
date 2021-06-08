@@ -4,6 +4,9 @@ const mainController = {
 
 
     login: function(req, res) {
+        
+        let message = 'Welcome to login!!'
+        
         let view = {
             message: message
         }      
